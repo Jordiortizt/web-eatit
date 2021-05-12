@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     
-    <title>EAT IT Inicio</title>
+    <title>EAT IT Plantilla</title>
   </head>
 
   <body style="background: #00ffaa">
