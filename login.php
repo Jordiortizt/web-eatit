@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     
-    <title>EAT IT Inicio</title>
+    <title>EAT IT Plantilla</title>
   </head>
 
   <body style="background: #00ffaa">
@@ -24,33 +24,39 @@
     </div>
 
     <header>
-      <div class="vertical">
-
-        <nav class="menu">
-
-          <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
-
-          <label class="menu-open-button" for="menu-open">
-            <span class="hamburger hamburger-1"></span>
-            <span class="hamburger hamburger-2"></span>
-            <span class="hamburger hamburger-3"></span>
-          </label>
-          
-          <a href="./restaurants.php" class="menu-item"> <i class="fas fa-utensils"></i><span class="sr-only">Restaurants</span> </a>
-          <a href="./login.php" class="menu-item"> <i class="fas fa-user-alt"></i><span class="sr-only">Login i registre</span> </a>
-          
-        </nav>
-
-      </div>
+      <nav class="menu">
+        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+        <label class="menu-open-button" for="menu-open">
+          <span class="hamburger hamburger-1"></span>
+          <span class="hamburger hamburger-2"></span>
+          <span class="hamburger hamburger-3"></span>
+        </label>
+        
+        <a href="./index.php" class="menu-item"> <i class="fas fa-utensils"></i><span class="sr-only">Inici</span> </a>
+        
+      </nav>
     </header>
-
+    
     <main>
       <section>
         <div class="container">
-          
+
+          <div class="row">
+
+            <div class="col-12">
+
+            </div>
+
+          </div>
+
         </div>
+
       </section>
     </main>
+
+
+
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 

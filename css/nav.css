@@ -25,12 +25,16 @@ h1 {
 
 header{
   height: 100vh;
+  line-height: 85vh;
+}
+
+.vertical{
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .menu {
   filter: url("#goo");
-  display: flex;
-  align-items: center;
 }
 
 .menu-item, .menu-open-button {
