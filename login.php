@@ -46,10 +46,11 @@
 
       <!-- Inici secció login -->
       <section id="login">
-
+        <h1 class="sr-only">Login</h1>
+        <p class="sr-only">Pagina de eat it para hacer login</p>
         <!-- Inici container -->
         <div class="container">
-
+        
           <!-- Inici row -->
           <div class="row">
 
@@ -61,7 +62,9 @@
 
                 <!-- Inici sub-carta -->
                 <div class="sub-carta">
-                  
+                   <div class="ultra-sub-carta">
+                       <h2>Iniciar Sessión</h2>
+
                     <form action="">
                       <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Usuario o Correo Electronico</label>
@@ -75,6 +78,8 @@
                       <button type="submit" class="btn btn-iniciar">Cancelar</button>
                       <button type="submit" class="btn btn-cancelar">Enviar</button>
                     </form>
+                   </div>
+                    
 
                 </div>
                 <!-- Fi sub-carta -->
