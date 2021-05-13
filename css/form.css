@@ -1,0 +1,23 @@
+.carta{
+    position: relative;
+    z-index: 999;
+    color: #3b7dff;
+    height: 100vh;
+}
+
+.sub-carta{
+    background-color: white;
+    padding: 50px;
+    margin-top: 35vh;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+.btn-iniciar{
+    background-color: #00ffaa;
+}
+
+.btn-cancelar{
+    background-color: #3b7dff;
+}

@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./css/background.css">
-    <link rel="stylesheet" href="./css/nav.css">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/nav-login.css">
+    <link rel="stylesheet" href="./css/form.css">
     
-    <title>EAT IT Plantilla</title>
+    <title>EAT IT Login</title>
   </head>
 
-  <body style="background: #00ffaa">
+  <body>
     <!-- Background -->
     <div class="box">
         <div class='wave -one'></div>
@@ -24,34 +25,69 @@
     </div>
 
     <header>
-      <nav class="menu">
-        <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
-        <label class="menu-open-button" for="menu-open">
-          <span class="hamburger hamburger-1"></span>
-          <span class="hamburger hamburger-2"></span>
-          <span class="hamburger hamburger-3"></span>
-        </label>
-        
-        <a href="./index.php" class="menu-item"> <i class="fas fa-utensils"></i><span class="sr-only">Inici</span> </a>
-        
-      </nav>
+      <div class="vertical sr-only">
+
+        <nav class="menu">
+          <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+          <label class="menu-open-button" for="menu-open">
+            <span class="hamburger hamburger-1"></span>
+            <span class="hamburger hamburger-2"></span>
+            <span class="hamburger hamburger-3"></span>
+          </label>
+          
+          <a href="./index.php" class="menu-item"> <i class="fas fa-utensils"></i><span class="sr-only">Inici</span> </a>
+          
+        </nav>
+      </div>
     </header>
     
+    <!-- Inici main -->
     <main>
-      <section>
+
+      <!-- Inici secció login -->
+      <section id="login">
+
+        <!-- Inici container -->
         <div class="container">
 
+          <!-- Inici row -->
           <div class="row">
 
+            <!-- Inici col -->
             <div class="col-12">
+              
+              <!-- Inici carta -->
+              <div class="carta">
 
+                <!-- Inici sub-carta -->
+                <div class="sub-carta">
+                  
+                    <form action="">
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Usuario o Correo Electronico</label>
+                        <input type="email" class="form-control" id="usuario" aria-describedby="emailHelp">
+                        <!-- <div id="helpusuario" class="form-text">Usuario</div> -->
+                      </div>
+                      <div class="mb-3">
+                        <label for="password" class="form-label">Contrasenya</label>
+                        <input type="password" class="form-control" id="password">
+                      </div>
+                      <button type="submit" class="btn btn-iniciar">Cancelar</button>
+                      <button type="submit" class="btn btn-cancelar">Enviar</button>
+                    </form>
+
+                </div>
+                <!-- Fi sub-carta -->
+              </div>
+              <!-- Fi carta -->
             </div>
-
+            <!-- Fi col -->
           </div>
-
+          <!-- Fi row -->
         </div>
-
+        <!-- Fi container -->
       </section>
+      <!-- Fi section login -->
     </main>
 
 
