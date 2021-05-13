@@ -43,27 +43,30 @@
     
     <!-- Inici main -->
     <main>
-
+    
+<!--
+    <section>
+        <div class="row bg-success justify-content-center align-items-center vh-100">
+            <div class="col-4 bg-primary">
+                <h1>bondia</h1>
+            </div>
+        </div> 
+    </section>
+-->
+     
       <!-- Inici secció login -->
       <section id="login">
         <h1 class="sr-only">Login</h1>
         <p class="sr-only">Pagina de eat it para hacer login</p>
         <!-- Inici container -->
         <div class="container">
-        
-          <!-- Inici row -->
-          <div class="row">
-
-            <!-- Inici col -->
-            <div class="col-12">
               
               <!-- Inici carta -->
-              <div class="carta">
+              <div class="container carta row justify-content-center align-items-center vh-100">
 
                 <!-- Inici sub-carta -->
-                <div class="sub-carta">
-                   <div class="ultra-sub-carta">
-                       <h2>Iniciar Sessión</h2>
+                <div class="sub-carta col-12 col-lg-6 py-5">
+                    <h2>Iniciar Sessión</h2>
 
                     <form action="">
                       <div class="mb-3">
@@ -78,17 +81,13 @@
                       <button type="submit" class="btn btn-iniciar">Cancelar</button>
                       <button type="submit" class="btn btn-cancelar">Enviar</button>
                     </form>
-                   </div>
                     
 
                 </div>
                 <!-- Fi sub-carta -->
               </div>
               <!-- Fi carta -->
-            </div>
-            <!-- Fi col -->
-          </div>
-          <!-- Fi row -->
+
         </div>
         <!-- Fi container -->
       </section>

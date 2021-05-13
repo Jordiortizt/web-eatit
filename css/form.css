@@ -16,25 +16,14 @@
 */
 
 .carta{
-    background-color: red;
-    padding: 5% 0;
+    color: #3b7dff;
     position: relative;
-    z-index: 999 !important;
-/*    color: #3b7dff;*/
-    color: red;
-    height: 100vh;
     
 }
 
 .sub-carta{
-    background-color: blue;
-    padding: 5% 0;  
-}
-
-.ultra-sub-carta{
     background-color: white;
-    padding: 50px;
-    z-index: 9999999;
+/*    padding: 50px;*/
 }
 
 .btn-iniciar{
