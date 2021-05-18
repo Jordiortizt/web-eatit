@@ -41,7 +41,7 @@
     <main>
      
       <!-- Inici secció login -->
-      <section id="login">
+      <section id="login" class="login">
         <h1 class="sr-only">Login</h1>
         <p class="sr-only">Pagina de eat it para hacer login</p>
         <!-- Inici container -->
