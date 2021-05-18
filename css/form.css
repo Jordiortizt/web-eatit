@@ -1,29 +1,13 @@
-/*
-.carta{
-    display: table;
-    position: relative;
-    z-index: 999 !important;
-    color: #3b7dff;
-    color: red;
-    height: 100vh;
-    
-}
-
-.sub-carta{
-    display: table-cell;
-	vertical-align: middle;    
-}
-*/
-
 .carta{
     color: #3b7dff;
     position: relative;
-    
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .sub-carta{
     background-color: white;
-/*    padding: 50px;*/
+    padding: 10%;
 }
 
 .btn-iniciar{

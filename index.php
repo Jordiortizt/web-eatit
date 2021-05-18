@@ -8,12 +8,14 @@
     <!-- Bootstrap CSS -->
     
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous"> -->
+
+    
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./css/background.css">
     <link rel="stylesheet" href="./css/nav.css">
-    
-    
+
+
     <title>EAT IT Inicio</title>
   </head>
 
@@ -26,24 +28,28 @@
     </div>
 
     <header>
-      <div class="vertical">
+      <div class="container">
 
-        <nav class="menu">
+        <div class="vertical">
 
-          <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+          <nav class="menu">
 
-          <label class="menu-open-button" for="menu-open">
-            <span class="hamburger hamburger-1"></span>
-            <span class="hamburger hamburger-2"></span>
-            <span class="hamburger hamburger-3"></span>
-          </label>
-          
-          <a href="./restaurants.php" class="menu-item"> <i class="fas fa-utensils"></i><span class="sr-only">Restaurants</span> </a>
-          <a href="./login.php" class="menu-item"> <i class="fas fa-user-alt"></i><span class="sr-only">Login i registre</span> </a>
-          
-        </nav>
+            <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
 
+            <label class="menu-open-button" for="menu-open">
+              <span class="hamburger hamburger-1"></span>
+              <span class="hamburger hamburger-2"></span>
+              <span class="hamburger hamburger-3"></span>
+            </label>
+            
+            <a href="./restaurants.php" class="menu-item"> <i class="fas fa-utensils"></i><span class="sr-only">Restaurants</span> </a>
+            <a href="./login.php" class="menu-item"> <i class="fas fa-user-alt"></i><span class="sr-only">Login i registre</span> </a>
+            
+          </nav>
+
+        </div>
       </div>
+      
     </header>
 
     <main>

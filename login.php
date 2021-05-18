@@ -10,8 +10,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./css/background.css">
-    <link rel="stylesheet" href="./css/nav-login.css">
+    <!-- <link rel="stylesheet" href="./css/nav-login.css"> -->
     <link rel="stylesheet" href="./css/form.css">
+    
+    <script src="./js/login.js"></script>
     
     <title>EAT IT Login</title>
   </head>
@@ -25,34 +27,18 @@
     </div>
 
     <header>
-      <div class="vertical sr-only">
+      <!-- <div class="vertical"> -->
 
-        <nav class="menu">
-          <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
-          <label class="menu-open-button" for="menu-open">
-            <span class="hamburger hamburger-1"></span>
-            <span class="hamburger hamburger-2"></span>
-            <span class="hamburger hamburger-3"></span>
-          </label>
+        <nav class="menu sr-only">
           
-          <a href="./index.php" class="menu-item"> <i class="fas fa-utensils"></i><span class="sr-only">Inici</span> </a>
           
+
         </nav>
-      </div>
+      <!-- </div> -->
     </header>
     
     <!-- Inici main -->
     <main>
-    
-<!--
-    <section>
-        <div class="row bg-success justify-content-center align-items-center vh-100">
-            <div class="col-4 bg-primary">
-                <h1>bondia</h1>
-            </div>
-        </div> 
-    </section>
--->
      
       <!-- Inici secció login -->
       <section id="login">
@@ -62,24 +48,25 @@
         <div class="container">
               
               <!-- Inici carta -->
-              <div class="container carta row justify-content-center align-items-center vh-100">
+              <div class="carta row justify-content-center align-items-center vh-100">
 
                 <!-- Inici sub-carta -->
                 <div class="sub-carta col-12 col-lg-6 py-5">
-                    <h2>Iniciar Sessión</h2>
+                    <h2>Iniciar Sessió</h2>
 
-                    <form action="">
+                    <form action="" onsubmit="return false;">
                       <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Usuario o Correo Electronico</label>
-                        <input type="email" class="form-control" id="usuario" aria-describedby="emailHelp">
-                        <!-- <div id="helpusuario" class="form-text">Usuario</div> -->
+                        <label for="usuari" class="form-label">Usuari o Correu Electronic</label>
+                        <input type="text" class="form-control" id="usuari">
+                        <div id="errorUsuari" class="form-text text-danger"></div>
                       </div>
                       <div class="mb-3">
                         <label for="password" class="form-label">Contrasenya</label>
                         <input type="password" class="form-control" id="password">
+                        <div id="errorPassword" class="form-text text-danger"></div>
                       </div>
                       <button type="submit" class="btn btn-iniciar">Cancelar</button>
-                      <button type="submit" class="btn btn-cancelar">Enviar</button>
+                      <button type="submit" class="btn btn-cancelar" onclick="login()">Enviar</button>
                     </form>
                     
 
