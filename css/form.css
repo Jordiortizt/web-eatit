@@ -6,25 +6,34 @@
 }
 
 .sub-carta{
-    background-color: white;
+    background-color: rgba(255,255,255,0.95);
     padding: 10%;
     border-radius: 20px;
 }
 
+.sub-carta label{
+    
+}
+
 .sub-carta input{
     border-radius: 10px;
+    border: 1px #3b7dff solid;
 }
 
 .sub-carta h2{
     padding-bottom: 10%;
 }
 
-
+.sub-carta .btn{
+    margin-top: 10%;
+}
 
 .btn-iniciar{
+    
     background-color: #00ffaa;
 }
 
 .btn-cancelar{
+    color: white;
     background-color: #3b7dff;
 }

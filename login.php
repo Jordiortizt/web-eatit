@@ -10,7 +10,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./css/background.css">
-    <!-- <link rel="stylesheet" href="./css/nav-login.css"> -->
     <link rel="stylesheet" href="./css/form.css">
     
     <script src="./js/login.js"></script>
@@ -65,8 +64,8 @@
                         <input type="password" class="form-control" id="password">
                         <div id="errorPassword" class="form-text text-danger"></div>
                       </div>
-                      <button type="submit" class="btn btn-iniciar">Cancelar</button>
-                      <button type="submit" class="btn btn-cancelar" onclick="login()">Enviar</button>
+                      <a href="./index.php" class="btn btn-cancelar float-start">Cancelar</a>
+                      <button type="submit" class="btn btn-iniciar float-end" onclick="login()">Enviar</button>
                     </form>
                     
 
