@@ -30,6 +30,6 @@ function iniciarSessio() {
         };
         xhttp.open("POST", "./php/login.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        // xhttp.send("usuari=" + document.getElementById("usuari").value + "&password=" + document.getElementById("password").value);
+        xhttp.send("usuari=" + document.getElementById("usuari").value + "&password=" + document.getElementById("password").value);
     }
 }

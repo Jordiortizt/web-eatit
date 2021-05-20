@@ -1,13 +1,11 @@
 <?php
     require_once("./functions.php");
 
-    // $usuari = $_POST["usuari"];
-    // $password = $_POST["password"];
-    $usuari = "Andreu@gmail.com"
-    $password = "P@ssw0rd";
+    $usuari = $_POST["usuari"];
+    $password = $_POST["password"];
     // $password = hash('sha512',$password);
-    $params = "?Email=" . $usuari . "&Password=" . $password;
-    $peticio = peticionGet("usuarios", 1);
+    $params = "?Usuario=". $usuari ."&Email=". $usuari ."&Telefono=". $usuari ."&Password=". $password;
+    $peticio = peticionGet("usuarios", $params);
     if(count($peticio) == 1){
         session_start();
         $_SESSION["usuariEatit"] = $peticio[0];
