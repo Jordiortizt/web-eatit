@@ -52,8 +52,62 @@
                 <!-- Inici sub-carta -->
                 <div class="sub-carta col-12 col-lg-6 py-5">
                     <h2>Iniciar Sessió</h2>
-
+                    Nombre
+                    Apellidos
+                    nombre de usuarios
+                    correo
+                    password
+                    telefono
+                    dni
+                    direccion
+                    ciudad
                     <form action="" onsubmit="return false;">
+                      <div class="row">
+                        <div class="mb-3 col-6">
+                          <label for="nom" class="form-label">Nom</label>
+                          <input type="text" class="form-control" id="usuari">
+                          <div id="errorNom" class="form-text text-danger"></div>
+                        </div>
+
+                        <div class="mb-3 col-6">
+                          <label for="cognom" class="form-label">Cognoms</label>
+                          <input type="text" class="form-control" id="usuari">
+                          <div id="errorCognom" class="form-text text-danger"></div>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="mb-3 col-6">
+                          <label for="nom" class="form-label">Telefon</label>
+                          <input type="text" class="form-control" id="usuari">
+                          <div id="errorNom" class="form-text text-danger"></div>
+                        </div>
+
+                        <div class="mb-3 col-6">
+                          <label for="cognom" class="form-label">DNI</label>
+                          <input type="text" class="form-control" id="usuari">
+                          <div id="errorCognom" class="form-text text-danger"></div>
+                        </div>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="usuari" class="form-label">Nom d'usuari</label>
+                        <input type="text" class="form-control" id="usuari">
+                        <div id="errorUsuari" class="form-text text-danger"></div>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="usuari" class="form-label">Correu Electronic</label>
+                        <input type="text" class="form-control" id="usuari">
+                        <div id="errorUsuari" class="form-text text-danger"></div>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="usuari" class="form-label">Telefon</label>
+                        <input type="text" class="form-control" id="usuari">
+                        <div id="errorUsuari" class="form-text text-danger"></div>
+                      </div>
+
                       <div class="mb-3">
                         <label for="usuari" class="form-label">Usuari o Correu Electronic</label>
                         <input type="text" class="form-control" id="usuari">

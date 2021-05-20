@@ -1,11 +1,9 @@
 <?php
   require_once("./php/functions.php");
-  // $user = checkUser();
-  // print_r($user);
-  // if($user->TipoUsuario === 0){
-  //   header('Location: ./index-client.php');
-  // }
-  
+  $user = checkUser();
+  if($user->Tipo === 2){
+    
+  }
 ?>
 
 <!doctype html>
@@ -39,11 +37,18 @@
 
     <header>
       <div class="container">
+      <?php
+      // print_r($user);
 
+      ?>
+        
         <div class="vertical">
-
+        <?php
+            // print_r($user);
+            echo '<h1>'.$user->Nombre.' '.$user->Apellidos.'</h1>'
+            ?>
           <nav class="menu">
-
+            <!-- <h1></h1><h1></h1> -->
             <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
 
             <label class="menu-open-button" for="menu-open">
@@ -53,9 +58,8 @@
             </label>
             
             <a href="./restaurants.php" class="menu-item"> <i class="fas fa-utensils"></i><span class="sr-only">Restaurants</span> </a>
-            <a href="./login.php" class="menu-item"> <i class="fas fa-user-alt"></i><span class="sr-only">Login</span> </a>
-            <a href="./registre-client.php" class="menu-item"> <i class="fas fa-sign-in-alt"></i><span class="sr-only">Registre client</span> </a>
-            <a href="./registre-propietari.php" class="menu-item"> <i class="fas fa-store-alt"></i><span class="sr-only">Registre propietari</span> </a>
+            <a href="./login.php" class="menu-item"> <i class="fas fa-user-alt"></i><span class="sr-only">Login i registre</span> </a>
+            
           </nav>
 
         </div>
