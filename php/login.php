@@ -5,7 +5,7 @@
     $password = $_POST["password"];
     // $password = hash('sha512',$password);
     $params = "?Usuario=". $usuari ."&Email=". $usuari ."&Telefono=". $usuari ."&Password=". $password;
-    $peticio = peticionGet("usuarios", $params);
+    $peticio = peticionGet("usuarios", $params)->usuarios;
     if(count($peticio) == 1){
         session_start();
         $_SESSION["usuariEatit"] = $peticio[0];

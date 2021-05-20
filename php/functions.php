@@ -2,10 +2,14 @@
 
 function peticionGet($table,$params){
     $ch = curl_init();
+    if($_SERVER["HTTP_HOST"] == "localhost")
+        $url = "localhost:8000/api/";
+    else
+        $url = "https://api-eatit.herokuapp.com/api/"; 
     if($params == null){
-        curl_setopt($ch, CURLOPT_URL, 'https://api-eatit.herokuapp.com/api/' . $table . '/'); 
+        curl_setopt($ch, CURLOPT_URL, $url . $table . '/'); 
     }else{
-        curl_setopt($ch, CURLOPT_URL, 'https://api-eatit.herokuapp.com/api/' . $table . '/' . $params); 
+        curl_setopt($ch, CURLOPT_URL, $url . $table . '/' . $params); 
     }
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
     curl_setopt($ch, CURLOPT_HEADER, 0); 
@@ -18,8 +22,12 @@ function peticionGet($table,$params){
 function peticionPost($table,$data){
     $fields_string = $data;
     $ch = curl_init();
+    if($_SERVER["HTTP_HOST"] == "localhost")
+        $url = "localhost:8000/api/";
+    else
+        $url = "https://api-eatit.herokuapp.com/api/"; 
     curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
-    curl_setopt($ch, CURLOPT_URL, 'https://api-eatit.herokuapp.com/api/' . $table . '/');
+    curl_setopt($ch, CURLOPT_URL, $url . $table . '/');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields_string));
