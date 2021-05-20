@@ -59,6 +59,7 @@
                         <input type="text" class="form-control" id="usuari">
                         <div id="errorUsuari" class="form-text text-danger"></div>
                       </div>
+                      
                       <div class="mb-3">
                         <label for="password" class="form-label">Contrasenya</label>
                         <input type="password" class="form-control" id="password">
@@ -66,7 +67,7 @@
                       </div>
                       
                       <a href="./index.php" class="btn btn-cancelar float-start">Cancelar</a>
-                      <button type="submit" class="btn btn-iniciar float-end" onclick="iniciarSessio()">Enviar</button>
+                      <button type="submit" class="btn btn-iniciar float-end" onclick="login()">Enviar</button>
                     </form>
                     
 

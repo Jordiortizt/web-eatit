@@ -1,20 +1,16 @@
 <?php
-    try {
-        require_once './conn.php';
-    
-        $usuari = $_POST["usuari"];
-        $password = $_POST["password"];
-        
-        $sql = $conectar->prepare("SELECT * FROM Administrador WHERE usuari LIKE '$usuari' AND contrasenya LIKE '$password'");
-        $sql->execute();
-        $data = $sql->fetchAll();
+    require_once("./functions.php");
 
-        echo count($data);
-        
-
-    }catch (PDOException $econexion) {
-        print "¡Error al conectar!: " . $econexion->getMessage() . "";
-        die();
+    $usuari = $_POST["usuari"];
+    $password = $_POST["password"];
+    $password = hash('sha512',$password);
+    $params = "?usuario=" . $usuari . "&correo=" . $usuari . "&password=" . $password;
+    $peticio = peticionGet("usuarios", $params)->usuarios;
+    if(count($peticio) == 1){
+        session_start();
+        $_SESSION["usuariEatit"] = $peticio[0];
+        echo 1;
+    }else{
+        echo 0;
     }
-    $conectar =null;
 ?>

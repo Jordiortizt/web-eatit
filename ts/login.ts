@@ -1,5 +1,4 @@
-function login() {
-
+function iniciarSessio() {
     if(document.getElementById("usuari").value == ""){
         document.getElementById("errorUsuari").innerHTML = "* L'usuari no pot estar en blanc.";
     }else{
@@ -13,28 +12,26 @@ function login() {
     }
 
     if(document.getElementById("usuari").value != "" && document.getElementById("password").value != ""){
-
-
-
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200){
-                if(this.responseText == 1){
-                    
-
-                    sessionStorage.setItem("tipus","Administrador");
-                    sessionStorage.setItem("usuari",usuari);
-
-                    window.location.href = "admin.html";
-                    
-                }else{
-                    alert("Error");
+            if (this.readyState == 4 && this.status == 200) {
+                if(this.response === "1") {
+                    document.getElementById("errorUsuari").innerHTML = "";
+                    document.getElementById("errorPassword").innerHTML = "";
+                    window.location.href = "./index-client.php";
+                    alert(this.response);
+                }
+                else {
+                    document.getElementById("errorUsuari").innerHTML = "* L'usuari o contrasenya no existeix";
+                    document.getElementById("errorPassword").innerHTML = "* L'usuari o contrasenya no existeix";
+                    alert(this.response);
                 }
             }
         };
         xhttp.open("POST", "./php/login.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhttp.send("usuari=" + document.getElementById("usuari").value +"& password="+document.getElementById("password").value);
-
+        xhttp.send("usuari=" + document.getElementById("usuari").value + "&password=" + document.getElementById("password").value);
     }
+
+    
 }
