@@ -51,17 +51,8 @@
 
                 <!-- Inici sub-carta -->
                 <div class="sub-carta col-12 col-lg-6 py-5">
-                    <h2>Iniciar Sessió</h2>
-                    Nombre
-                    Apellidos
-                    nombre de usuarios
-                    correo
-                    password
-                    telefono
-                    dni
-                    direccion
-                    ciudad
-
+                    <h2>Registre client</h2>
+                    <p class="sr-only">Registre destinat als clients no propietaris de l'aplicació</p>
                     <form action="" onsubmit="return false;">
                       <div class="mb-3">
                         <label for="nom" class="form-label">Nom</label>
