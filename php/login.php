@@ -3,7 +3,7 @@
 
     $usuari = $_POST["usuari"];
     $password = $_POST["password"];
-    $password = hash('sha512',$password);
+    // $password = hash('sha512',$password);
     $params = "?User=". $usuari ."&Email=". $usuari ."&Telefono=". $usuari ."&Password=". $password;
     $peticio = peticionGet("usuarios", $params)->usuarios;
     if(count($peticio) == 1){

@@ -22,10 +22,14 @@ function peticionGet($table,$params){
 function peticionPost($table,$data){
     $fields_string = $data;
     $ch = curl_init();
-    if($_SERVER["HTTP_HOST"] == "localhost")
+    if($_SERVER["HTTP_HOST"] == "localhost"){
         $url = "localhost:8000/api/";
-    else
+    }
+        
+    else{
         $url = "https://api-eatit.herokuapp.com/api/"; 
+    }
+        
     curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
     curl_setopt($ch, CURLOPT_URL, $url . $table . '/');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -38,14 +42,16 @@ function peticionPost($table,$data){
     return $data;
 }
 
-function checkUser(){
+function checkUsuari(){
     session_start();
     if(isset($_SESSION["usuariEatit"])){
-        $user = $_SESSION["usuariEatit"];
-        return $user;
+        $usuari = $_SESSION["usuariEatit"];
+        return $usuari;
     }
-    else
-        header('Location: ../');
+    else{
+        // header('Location: ./index.php');
+    }
+        
 }
 
 ?>

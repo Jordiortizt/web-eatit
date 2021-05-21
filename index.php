@@ -1,11 +1,6 @@
 <?php
   require_once("./php/functions.php");
-  // $user = checkUser();
-  // print_r($user);
-  // if($user->TipoUsuario === 0){
-  //   header('Location: ./index-client.php');
-  // }
-  
+  checkUsuari();
 ?>
 
 <!doctype html>

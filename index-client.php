@@ -1,9 +1,11 @@
 <?php
   require_once("./php/functions.php");
-  $user = checkUser();
-  if($user->Tipo === 2){
+  $usuari = checkUsuari();
+  print_r($usuari);
+  if($usuari->TipoUsuario === 2){
     
   }
+  
 ?>
 
 <!doctype html>
@@ -38,14 +40,14 @@
     <header>
       <div class="container">
       <?php
-      // print_r($user);
+      // print_r($usuari);
 
       ?>
         
         <div class="vertical">
         <?php
-            // print_r($user);
-            echo '<h1>'.$user->Nombre.' '.$user->Apellidos.'</h1>'
+            // print_r($usuari);
+            echo '<h1>'.$usuari->Nombre.' '.$usuari->Apellidos.'</h1>'
             ?>
           <nav class="menu">
             <!-- <h1></h1><h1></h1> -->

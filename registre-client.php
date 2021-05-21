@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="./css/background.css">
     <link rel="stylesheet" href="./css/form.css">
     
-    <script src="./js/login.js"></script>
+    <script src="./js/registre-client.js"></script>
     
-    <title>EAT IT Login</title>
+    <title>EAT IT Registre client</title>
   </head>
 
   <body>
@@ -56,13 +56,13 @@
                     <form action="" onsubmit="return false;">
                       <div class="mb-3">
                         <label for="nom" class="form-label">Nom</label>
-                        <input type="text" class="form-control" id="usuari">
+                        <input type="text" class="form-control" id="nom">
                         <div id="errorNom" class="form-text text-danger"></div>
                       </div>
 
                       <div class="mb-3">
                         <label for="cognom" class="form-label">Cognoms</label>
-                        <input type="text" class="form-control" id="usuari">
+                        <input type="text" class="form-control" id="cognom">
                         <div id="errorCognom" class="form-text text-danger"></div>
                       </div>
                       
@@ -97,7 +97,7 @@
                       </div>
                       
                       <a href="./index.php" class="btn btn-cancelar float-start">Cancelar</a>
-                      <button type="submit" class="btn btn-iniciar float-end" onclick="login()">Enviar</button>
+                      <button type="submit" class="btn btn-iniciar float-end" onclick="registre()">Enviar</button>
                     </form>
                     
 
