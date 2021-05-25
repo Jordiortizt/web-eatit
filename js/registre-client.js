@@ -42,7 +42,7 @@ function registre() {
         if (formatTel()) {
             document.getElementById("errorTel").innerHTML = "";
             // bbdd
-            comprovarTel();
+            //comprovarTel();
         }
         else {
             document.getElementById("errorTel").innerHTML = "* El format del telefon no es correcte";
@@ -56,7 +56,7 @@ function registre() {
         document.getElementById("errorDni").innerHTML = "";
         if (formatDNI()) {
             document.getElementById("errorDni").innerHTML = "";
-            comprovarDNI();
+            // comprovarDNI();
         }
         else {
             document.getElementById("errorDni").innerHTML = "* El format del DNI no es vàlid";
@@ -92,6 +92,13 @@ function registre() {
     }
     else {
         document.getElementById("errorPassword").innerHTML = "";
+        // Format
+        if (formatPass()) {
+            document.getElementById("errorEmail").innerHTML = "";
+        }
+        else {
+            document.getElementById("errorPassword").innerHTML = "* La contrasenya ha de ser minim 8 caracters";
+        }
     }
     if (document.getElementById("nom").value != "" &&
         document.getElementById("cognom").value != "" &&
@@ -100,31 +107,30 @@ function registre() {
         document.getElementById("usuari").value != "" &&
         document.getElementById("email").value != "" &&
         document.getElementById("password").value != "" &&
-        email == true && tel == true && dni == true && pass == true &&
-        bbddEmail == true && bbddTel == true && bbddDni == true) {
-        alert("Bondia");
+        email == true && tel == true && dni == true && pass == true //&&
+    //bbddEmail == true && bbddTel == true && bbddDni == true
+    ) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                if (this.response === "1") {
+                if (this.responseText == "1") {
+                    alert(this.responseText);
                     window.location.href = "./login.php";
                 }
                 else {
+                    alert(this.responseText);
                 }
             }
         };
         xhttp.open("POST", "./php/registre-client.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhttp.send("nom=" + document.getElementById("nom").value +
-            "&cognoms=" + document.getElementById("cognoms").value +
+            "&cognom=" + document.getElementById("cognom").value +
             "&tel=" + document.getElementById("tel").value +
             "&email=" + document.getElementById("email").value +
             "&dni=" + document.getElementById("dni").value +
             "&usuari=" + document.getElementById("usuari").value +
             "&password=" + document.getElementById("password").value);
-    }
-    else {
-        alert("NOO");
     }
 }
 //
@@ -135,12 +141,10 @@ function formatTel() {
     formTel = parseInt(document.getElementById("tel").value);
     if (Number.isInteger(formTel) == true && formTel.toString().length == 9) {
         tel = true;
-        alert("Form tel 1");
         return true;
     }
     else {
         tel = false;
-        alert("Form tel 0");
         return false;
     }
 }
@@ -149,38 +153,31 @@ function formatEmail() {
     var format = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if (format.test(document.getElementById("email").value)) {
         email = true;
-        alert("Form email 1");
         return true;
     }
     else {
         email = false;
-        alert("Form email 0");
         return false;
     }
 }
-// Dni format
+// DNI format
 function formatDNI() {
-    dni = false;
     var numero;
     var lletraintroduit;
     var lletra;
-    var expresio_dni;
-    formDni = document.getElementById("dni").value;
-    expresio_dni = /^\d{8}[a-zA-Z]$/;
-    if (expresio_dni.test(dni) == true) {
-        numero = dni.substr(0, dni.length - 1);
-        lletraintroduit = dni.substr(dni.length - 1, 1);
+    var expresio_dni = /^\d{8}[a-zA-Z]$/;
+    if (expresio_dni.test(document.getElementById("dni").value) == true) {
+        numero = document.getElementById("dni").value.substr(0, document.getElementById("dni").value.length - 1);
+        lletraintroduit = document.getElementById("dni").value.substr(document.getElementById("dni").value.length - 1, 1);
         numero = numero % 23;
         lletra = 'TRWAGMYFPDXBNJZSQVHLCKET';
         lletra = lletra.substring(numero, numero + 1);
         if (lletra != lletraintroduit.toUpperCase()) {
             dni = false;
-            alert("Form dni 0");
             return false;
         }
         else {
             dni = true;
-            alert("Form dni 1");
             return true;
         }
     }
@@ -191,17 +188,12 @@ function formatDNI() {
 }
 // password format
 function formatPass() {
-    formPass = parseInt(document.getElementById("password").value);
-    if (formPass.toString().length > 7) {
+    if (document.getElementById("password").value.length > 7) {
         pass = true;
-        alert("Form pass 1");
-        document.getElementById("errorTel").innerHTML = "* ";
         return true;
     }
     else {
         pass = false;
-        alert("Form pass 0");
-        document.getElementById("errorTel").innerHTML = "* El telèfon ja ha sigut registrat";
         return false;
     }
 }
@@ -215,11 +207,11 @@ function comprovarTel() {
         if (this.readyState == 4 && this.status == 200) {
             if (this.responseText == 1) {
                 tel = false;
-                alert("bbdd tel 0");
+                document.getElementById("errorTel").innerHTML = "";
             }
             else {
                 tel = true;
-                alert("bbdd tel 1");
+                document.getElementById("errorTel").innerHTML = "* El telèfon ja ha sigut registrat";
             }
         }
     };
@@ -234,13 +226,11 @@ function comprovarDNI() {
         if (this.readyState == 4 && this.status == 200) {
             if (this.responseText == 1) {
                 email = false;
-                document.getElementById("errEmail").innerHTML = "* El correu ja ha sigut registrat";
-                alert("bbdd dni 0");
+                document.getElementById("errorEmail").innerHTML = "* El correu ja ha sigut registrat";
             }
             else {
                 email = true;
-                document.getElementById("errEmail").innerHTML = "";
-                alert("bbdd dni 1");
+                document.getElementById("errorEmail").innerHTML = "";
             }
         }
     };
@@ -255,13 +245,11 @@ function comprovarEmail() {
         if (this.readyState == 4 && this.status == 200) {
             if (this.responseText == 1) {
                 email = false;
-                document.getElementById("errEmail").innerHTML = "* El correu ja ha sigut registrat";
-                alert("bbdd email 0");
+                document.getElementById("errorEmail").innerHTML = "* El correu ja ha sigut registrat";
             }
             else {
                 email = true;
-                document.getElementById("errEmail").innerHTML = "";
-                alert("bbdd email 1");
+                document.getElementById("errorEmail").innerHTML = "";
             }
         }
     };
@@ -276,11 +264,11 @@ function comprovarUsuari() {
         if (this.readyState == 4 && this.status == 200) {
             if (this.responseText == 1) {
                 usuari = false;
-                alert("bbdd usuari 0");
+                document.getElementById("errorEmail").innerHTML = "* El usuari ja ha sigut registrat";
             }
             else {
                 usuari = true;
-                alert("bbdd usuari 1");
+                document.getElementById("errorEmail").innerHTML = "";
             }
         }
     };

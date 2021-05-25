@@ -1,55 +1,77 @@
 <?php
     require_once("./functions.php");
-    // require_once("../core/bucket.php");
-    $name = $_POST["form-first-name"];
-    $surname = $_POST["form-last-name"];
-    $birth = $_POST["birth"];
-    $email = $_POST["form-email"];
-    $tel = $_POST["form-tel"];
-    $pass1 = $_POST["form-password"];
-    $pass2 = $_POST["form-repeat-password"];
-    $dni = $_POST["form-dni"];
-    $sector = $_POST["form-sector"];
-    $poblacion = $_POST["form-poblacion"];
-    $fotoName = $_FILES["foto"]["name"];
-    $fotoTmp = $_FILES["foto"]["tmp_name"];
-    $tipus = $_POST["tipus"];
 
-    $fotoName = str_replace(" ","",$fotoName);
-    $result = $s3Client->putObject([
-        'Bucket' => $bucket,
-        'Key' => 'fotosUsuarios/' . $fotoName,
-        'SourceFile' => $fotoTmp,
-    ]);
-    $s3_route = "https://pfinaljp.s3-eu-west-1.amazonaws.com/fotosUsuarios/" . $fotoName;
+    $nom = $_POST["nom"];
+    $cognom = $_POST["cognom"];
+    $tel = $_POST["tel"];
+    $email = $_POST["email"];
+    $dni = $_POST["dni"];
+    $usuari = $_POST["usuari"];
+    $pass = $_POST["password"];
+    $tipus = 1;
+
+    // $fotoName = str_replace(" ","",$fotoName);
+    // $result = $s3Client->putObject([
+    //     'Bucket' => $bucket,
+    //     'Key' => 'fotosUsuarios/' . $fotoName,
+    //     'SourceFile' => $fotoTmp,
+    // ]);
+    // $s3_route = "https://pfinaljp.s3-eu-west-1.amazonaws.com/fotosUsuarios/" . $fotoName;
     
-    $pass1 = hash('sha512',$pass1);
-    /*$params = "?Nombre=" . $name . "&Apellidos=" . $surname . "&Fecha_nacimiento=" . $birth . "&Email=" . $email . "&Telefono=" . $tel . "&Password=" . $pass1 . "&DNI=" . $dni . "&Sector_laboral=" . $sector . "&Poblacion=" . $poblacion . "&Foto=assets/uploads/" . $fotoName. "&Tipo=" . $tipo;*/
+    $pass = hash('sha512',$pass);
 
-    $arrayParams["Nombre"] = $name;
-    $arrayParams["Apellidos"] = $surname;
-    $arrayParams["Fecha_nacimiento"] = $birth;
+    $arrayParams["Nombre"] = $nom;
+    $arrayParams["Apellidos"] = $cognom;
+    $arrayParams["Usuario"] = $usuari;
+    $arrayParams["Password"] = $pass;
     $arrayParams["Email"] = $email;
     $arrayParams["Telefono"] = $tel;
-    $arrayParams["Password"] = $pass1;
-    $arrayParams["DNI"] = $dni;
-    $arrayParams["Sector_laboral"] = $sector;
-    $arrayParams["Poblacion"] = $poblacion;
-    $arrayParams["Foto"] = $s3_route;
-    $arrayParams["Tipo"] = $tipus;
-   /* echo $params;*/
+    $arrayParams["TipoUsuario"] = $tipus;
+    $arrayParams["DNICIF"] = $dni;
+
     $peticio = peticionPost("usuarios",$arrayParams);
     $ok = json_encode($peticio);
-    if(strpos($ok,"ok") == 2){
-        
-        header('Location: ../../register.php?error=1&type=' . $tipus);
-       
-    }else{
 
-        session_start();
-        $_SESSION["userMinder"] = (object)$arrayParams;
-        //print_r($_SESSION["userMinder"]);
-        header('Location: ../../app/');
-    }
+    session_start();
+    $_SESSION["userEatit"] = (object)$arrayParams;
+
+    echo 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //if(strpos($ok,"ok") == 2){
+       //echo 0;
+        //header('Location: ../../register.php?error=1&type=' . $tipus);
+    //}else{
+        //session_start();
+        //$_SESSION["userEatit"] = (object)$arrayParams;
+        // header('Location: ./index-client.php');
+        //echo 1;
+    //}
 
 ?>
