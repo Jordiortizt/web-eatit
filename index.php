@@ -47,7 +47,7 @@
               <span class="hamburger hamburger-3"></span>
             </label>
             
-            <a href="./restaurants.php" class="menu-item"> <i class="fas fa-utensils"></i><span class="sr-only">Restaurants</span> </a>
+            <a href="./restaurants-client.php" class="menu-item"> <i class="fas fa-utensils"></i><span class="sr-only">Restaurants</span> </a>
             <a href="./login.php" class="menu-item"> <i class="fas fa-user-alt"></i><span class="sr-only">Login</span> </a>
             <a href="./registre-client.php" class="menu-item"> <i class="fas fa-sign-in-alt"></i><span class="sr-only">Registre client</span> </a>
             <a href="./registre-propietari.php" class="menu-item"> <i class="fas fa-store-alt"></i><span class="sr-only">Registre propietari</span> </a>

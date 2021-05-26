@@ -59,7 +59,7 @@
               <span class="hamburger hamburger-3"></span>
             </label>
             
-            <a href="./restaurants.php" class="menu-item"> <i class="fas fa-utensils"></i><span class="sr-only">Restaurants</span> </a>
+            <a href="./restaurants-client.php" class="menu-item"> <i class="fas fa-utensils"></i><span class="sr-only">Restaurants</span> </a>
             <a href="./login.php" class="menu-item"> <i class="fas fa-user-alt"></i><span class="sr-only">Login i registre</span> </a>
             
           </nav>

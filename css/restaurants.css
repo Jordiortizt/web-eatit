@@ -1,0 +1,12 @@
+.restaurant{
+    width: 100%;
+    height: 15vh;
+    background-image: url('../img/restaurant.png');
+    background-position: center;
+    
+}
+
+.card{
+    text-align: left;
+    color: black;
+}
