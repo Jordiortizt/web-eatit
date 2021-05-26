@@ -27,7 +27,6 @@
     </div>
 
     <header>
-      <!-- <div class="vertical"> -->
 
       <nav class="menu">
         <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
@@ -57,9 +56,60 @@
         <div class="container">
 
           <div class="restaurant">
+            <div class="">
             <h2 class="">EAT IT</h2>
             <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           </div>
+
+          <div class="restaurant">
+            <div class="">
+            <h2 class="">EAT IT</h2>
+            <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+
+          <div class="restaurant">
+            <div class="">
+            <h2 class="">EAT IT</h2>
+            <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+
+          <div class="restaurant">
+            <div class="">
+            <h2 class="">EAT IT</h2>
+            <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+
+          <div class="restaurant">
+            <div class="">
+            <h2 class="align-middle">EAT IT</h2>
+            <p class="align-middle">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+
+          <div class="restaurant">
+            <div class="">
+            <h2 class="align-middle">EAT IT</h2>
+            <p class="align-middle">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+
+          <div class="restaurant">
+            <div class="">
+            <h2 class="align-middle">EAT IT</h2>
+            <p class="align-middle">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+
+          <div class="restaurant">
+            <div class="">
+            <h2 class="align-middle">EAT IT</h2>
+            <p class="align-middle">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+
+          <div class="restaurant">
+            <div class="">
+            <h2 class="align-middle">EAT IT</h2>
+            <p class="align-middle">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+            
+
 
         </div>
       </section>

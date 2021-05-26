@@ -13,7 +13,7 @@ h1, h2, h3, h4 {
 }
   
 h1 {
-font-size: 3em;
+    font-size: 3em;
 }
   
 .menu {
@@ -75,7 +75,7 @@ font-size: 3em;
   }
   
 .menu {
-    z-index: 1;
+    z-index: 4;
     margin-top: 3vh;
     position: absolute;
     left: 50%;
