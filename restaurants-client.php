@@ -59,57 +59,23 @@
       </section>
 
       <section id="restaurants" class="restaurants pt-5">
-        <div class="container">
+        <div class="container" id="mostrarRestaurants">
+
+
+
+          <!-- <div class="restaurant" style="background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DY16RP9dtRgw&psig=AOvVaw2ABeBWx2HM0re406qGA3J5&ust=1622187048030000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPiP5eer6fACFQAAAAAdAAAAABAE');">
+            <div class="">
+              <h2 class="">EAT IT</h2>
+              <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
 
           <div class="restaurant">
             <div class="">
               <h2 class="">EAT IT</h2>
               <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
-          </div>
-
-          <div class="restaurant">
-            <div class="">
-              <h2 class="">EAT IT</h2>
-              <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-          <div class="restaurant">
-            <div class="">
-              <h2 class="">EAT IT</h2>
-              <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-          <div class="restaurant">
-            <div class="">
-              <h2 class="">EAT IT</h2>
-              <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-          <div class="restaurant">
-            <div class="">
-              <h2 class="">EAT IT</h2>
-              <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-          <div class="restaurant">
-            <div class="">
-              <h2 class="">EAT IT</h2>
-              <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-          <div class="restaurant">
-            <div class="">
-              <h2 class="">EAT IT</h2>
-              <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-          <div class="restaurant">
-            <div class="">
-              <h2 class="">EAT IT</h2>
-              <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
+          </div> -->
 
         </div>
       </section>
