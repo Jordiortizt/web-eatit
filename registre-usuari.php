@@ -96,6 +96,15 @@
                         <div id="errorPassword" class="form-text text-danger"></div>
                       </div>
                       
+                      <div class="mb-3">
+                        <label for="tipus" class="form-label">Tipus d'usuari</label>
+                        <select class="form-select" id="tipus">
+                          <option value="1" selected>Client</option>
+                          <option value="2">Propietari</option>
+                        </select>
+                        <div id="errorTipus" class="form-text text-danger"></div>
+                      </div>
+                      
                       <a href="./index.php" class="btn btn-cancelar float-start">Cancelar</a>
                       <button type="submit" class="btn btn-iniciar float-end" onclick="registre()">Enviar</button>
                     </form>

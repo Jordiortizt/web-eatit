@@ -36,11 +36,11 @@
           <span class="hamburger hamburger-3"></span>
         </label>
 
-        <a href="#" class="menu-item"> <i class="fas fa-home"></i> </a>
+        <a href="./index-client.php" class="menu-item"> <i class="fas fa-home"></i> </a>
         <p class="sr-only">Espai</p>
         <p class="sr-only">Espai</p>
         <p class="sr-only">Espai</p>
-        <a href="#" class="menu-item"> <i class="fas fa-home"></i> </a>
+        <a href="./index-client.php" class="menu-item"> <i class="fas fa-home"></i> </a>
 
       </nav>
       <!-- </div> -->

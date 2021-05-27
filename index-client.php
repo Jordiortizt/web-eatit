@@ -3,7 +3,7 @@
   $usuari = checkUsuari();
   print_r($usuari);
   if($usuari->TipoUsuario === 2){
-    
+      header('./index.php');
   }
   
 ?>

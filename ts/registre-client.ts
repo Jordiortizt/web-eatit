@@ -119,6 +119,7 @@ function registre() {
         document.getElementById("usuari").value != "" &&
         document.getElementById("email").value != "" &&
         document.getElementById("password").value != "" &&
+        document.getElementById("tipus").value != "" &&
         email == true && tel == true && dni == true && pass == true //&&
         //bbddEmail == true && bbddTel == true && bbddDni == true
         ){
@@ -137,7 +138,7 @@ function registre() {
                 
             }
         };
-        xhttp.open("POST", "./php/registre-client.php", true);
+        xhttp.open("POST", "./php/registre-usuari.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhttp.send("nom=" + document.getElementById("nom").value + 
                 "&cognom=" + document.getElementById("cognom").value + 
@@ -145,8 +146,8 @@ function registre() {
                 "&email=" + document.getElementById("email").value +
                 "&dni=" + document.getElementById("dni").value +
                 "&usuari=" + document.getElementById("usuari").value +
-                "&password=" + document.getElementById("password").value);
-
+                "&password=" + document.getElementById("password").value + 
+                "&tipus=" + document.getElementById("tipus").value);
     }
 }
 

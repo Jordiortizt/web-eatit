@@ -8,7 +8,7 @@
     $dni = $_POST["dni"];
     $usuari = $_POST["usuari"];
     $pass = $_POST["password"];
-    $tipus = 1;
+    $tipus = intval($_POST["tipus"]);
 
     // $fotoName = str_replace(" ","",$fotoName);
     // $result = $s3Client->putObject([
