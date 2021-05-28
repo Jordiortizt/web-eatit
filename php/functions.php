@@ -5,7 +5,7 @@ function peticionGet($table,$params){
     // if($_SERVER["HTTP_HOST"] == "localhost"){
     //     $url = "localhost:8000/api/";
     // }else{
-        $url = "https://api-eatit.herokuapp.com/api/"; 
+        $url = "http://api-eatit.herokuapp.com/api/"; 
     // }
         
     if($params == null){
@@ -27,7 +27,7 @@ function peticionPost($table,$data){
     // if($_SERVER["HTTP_HOST"] == "localhost"){
     //     $url = "localhost:8000/api/";
     // }else{
-        $url = "https://api-eatit.herokuapp.com/api/"; 
+        $url = "http://api-eatit.herokuapp.com/api/"; 
     // }
         
     curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
