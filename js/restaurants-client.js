@@ -15,5 +15,5 @@ window.onload = function restaurantsClient() {
     xhttp.send("");
 };
 function escollirRestaurant(id) {
-    alert(id);
+    location.replace();
 }
