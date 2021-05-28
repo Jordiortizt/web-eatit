@@ -17,5 +17,5 @@ window.onload = function restaurantsClient() {
 
 
 function escollirRestaurant(id){
-    alert(id);
+    location.replace();
 }
