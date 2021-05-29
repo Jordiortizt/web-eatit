@@ -9,7 +9,6 @@
       if(!isset($usuari)){
         header('Location: ./index.php');
       }else{
-          print_r($usuari);
           if($usuari->TipoUsuario === 1){
               header('Location: ./index-client.php');
           }else if($usuari->TipoUsuario === 2){
@@ -72,6 +71,7 @@
             </label>
             
             <a href="./restaurants-client.php" class="menu-item"> <i class="fas fa-utensils"></i><span class="sr-only">Restaurants</span> </a>
+            <a href="./perfil.php" class="menu-item"> <i class="fas fa-user-alt"></i><span class="sr-only">Perfil</span> </a>
             <a href="?destroy=1" class="menu-item"> <i class="fas fa-power-off"></i><span class="sr-only">Tancar sessió</span> </a>
             
           </nav>
