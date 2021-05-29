@@ -3,12 +3,11 @@
 
     $tel = $_POST["tel"];
 
-    $params = "?Telefono=". $tel;
+    $params = "1?Telefono=". $tel;
     $peticio = peticionGet("usuarios", $params)->usuarios;
-    if(count($peticio) == 1){
-        return 1;
-        echo $peticio;
+    if(count($peticio) >= 1){
+        echo 1;
     }else{
-        return 0;
+        echo 0;
     }
 ?>

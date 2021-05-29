@@ -22,21 +22,25 @@ var formUsuari;
 
 function registre() {
     
-    // Nom
+    // Nom //
+
+    // blanc
     if(document.getElementById("nom").value == ""){
         document.getElementById("errorNom").innerHTML = "* El nom no pot estar en blanc.";
     }else{
         document.getElementById("errorNom").innerHTML = "";
     }
 
-    // Cognoms
+    // Cognoms //
+
+    // blanc
     if(document.getElementById("cognom").value == ""){
         document.getElementById("errorCognom").innerHTML = "* El cognom no pot estar en blanc.";
     }else{
         document.getElementById("errorCognom").innerHTML = "";
     }
 
-    // Telefon
+    // Telefon //
 
     // blanc
     if(document.getElementById("tel").value == ""){
@@ -48,36 +52,46 @@ function registre() {
         if(formatTel()){
             document.getElementById("errorTel").innerHTML = "";
             // bbdd
-            //comprovarTel();
+            comprovarTel();
 
         }else{
             document.getElementById("errorTel").innerHTML = "* El format del telefon no es correcte";
         }
     }
 
-    // DNI
+    // DNI //
+
+    // Blanc
     if(document.getElementById("dni").value == ""){
         document.getElementById("errorDni").innerHTML = "* El DNI no pot estar en blanc.";
     }else{
         document.getElementById("errorDni").innerHTML = "";
+
+        // bbdd Usuari
         if(formatDNI()){
             document.getElementById("errorDni").innerHTML = "";
-
-            // comprovarDNI();
+            // bbdd DNI
+            comprovarDNI();
 
         }else{
             document.getElementById("errorDni").innerHTML = "* El format del DNI no es vàlid";
         }
     }
 
-    // Nom d'usuari
+    // Nom d'usuari //
+
+    // Blanc
     if(document.getElementById("usuari").value == ""){
         document.getElementById("errorUsuari").innerHTML = "* L'usuari no pot estar en blanc.";
     }else{
         document.getElementById("errorUsuari").innerHTML = "";
+
+        // bbdd Usuari
+        comprovarUsuari();
+
     }
 
-    // Email
+    // Email //
 
     // Blanc
     if(document.getElementById("email").value == ""){
@@ -96,7 +110,7 @@ function registre() {
         }
     }
 
-    // Contrasenya
+    // Contrasenya //
     
     if(document.getElementById("password").value == ""){
         document.getElementById("errorPassword").innerHTML = "* La contrasenya no pot estar en blanc.";
@@ -120,11 +134,9 @@ function registre() {
         document.getElementById("email").value != "" &&
         document.getElementById("password").value != "" &&
         document.getElementById("tipus").value != "" &&
-        email == true && tel == true && dni == true && pass == true //&&
-        //bbddEmail == true && bbddTel == true && bbddDni == true
-        ){
+        email == true && tel == true && dni == true && pass == true &&
+        bbddEmail == true && bbddTel == true && bbddDni == true && bbddUsuari == true){
         
-
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
@@ -148,6 +160,12 @@ function registre() {
                 "&usuari=" + document.getElementById("usuari").value +
                 "&password=" + document.getElementById("password").value + 
                 "&tipus=" + document.getElementById("tipus").value);
+    }else{
+        alert("bbddEmail "+bbddEmail);
+        alert("bbddTel "+bbddTel);
+        alert("bbddDni "+bbddDni);
+        alert("bbddUsuari "+bbddUsuari);
+
     }
 }
 
@@ -236,12 +254,12 @@ function comprovarTel() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            if(this.responseText == 1) {
-                tel = false;
-                document.getElementById("errorTel").innerHTML = "";
-            } else {
-                tel = true;
+            if(this.responseText === "1") {
+                bbddTel = false;
                 document.getElementById("errorTel").innerHTML = "* El telèfon ja ha sigut registrat";
+            } else {
+                bbddTel = true;
+                document.getElementById("errorTel").innerHTML = "";
             }
         }
     };
@@ -256,12 +274,12 @@ function comprovarDNI() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            if(this.responseText == 1) {
-                email = false;
-                document.getElementById("errorEmail").innerHTML = "* El correu ja ha sigut registrat";
+            if(this.responseText === "1") {
+                bbddDni = false;
+                document.getElementById("errorDni").innerHTML = "* El correu ja ha sigut registrat";
             } else {
-                email = true;
-                document.getElementById("errorEmail").innerHTML = "";
+                bbddDni = true;
+                document.getElementById("errorDni").innerHTML = "";
             }
         }
     };
@@ -276,11 +294,11 @@ function comprovarEmail() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            if(this.responseText == 1) {
-                email = false;
+            if(this.responseText === "1") {
+                bbddEmail = false;
                 document.getElementById("errorEmail").innerHTML = "* El correu ja ha sigut registrat";
             } else {
-                email = true;
+                bbddEmail = true;
                 document.getElementById("errorEmail").innerHTML = "";
             }
         }
@@ -296,16 +314,16 @@ function comprovarUsuari() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            if(this.responseText == 1) {
-                usuari = false;
-                document.getElementById("errorEmail").innerHTML = "* El usuari ja ha sigut registrat";
+            if(this.responseText === "1") {
+                bbddUsuari = false;
+                document.getElementById("errorUsuari").innerHTML = "* El usuari ja ha sigut registrat";
             } else {
-                usuari = true;
-                document.getElementById("errorEmail").innerHTML = "";
+                bbddUsuari = true;
+                document.getElementById("errorUsuari").innerHTML = "";
             }
         }
     };
     xhttp.open("POST", "./php/bbddUsuari.php", true);
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhttp.send("email=" + document.getElementById("usuari").value);
+    xhttp.send("User=" + document.getElementById("usuari").value);
 }

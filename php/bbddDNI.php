@@ -1,9 +1,9 @@
 <?php
     require_once("./functions.php");
 
-    $email = $_POST["email"];
+    $dni = $_POST["dni"];
 
-    $params = "1?Email=". $email;
+    $params = "1?DNI=". $dni;
     $peticio = peticionGet("usuarios", $params)->usuarios;
     if(count($peticio) >= 1){
         echo 1;
