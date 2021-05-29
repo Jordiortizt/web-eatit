@@ -5,6 +5,7 @@
     $password = $_POST["password"];
     $pass = hash('sha512',$password);
     $params = "?User=". $usuari ."&Email=". $usuari ."&Telefono=". $usuari ."&Password=". $pass;
+    echo $params;
     // $params = "?User=". $usuari ."&Password=". $pass;
     $peticio = peticionGet("usuarios", $params)->usuarios;
     if(count($peticio) == 1){
