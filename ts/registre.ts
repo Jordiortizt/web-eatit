@@ -138,7 +138,7 @@ function registre() {
                 
             }
         };
-        xhttp.open("POST", "./php/registre-usuari.php", true);
+        xhttp.open("POST", "./php/registre.php", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhttp.send("nom=" + document.getElementById("nom").value + 
                 "&cognom=" + document.getElementById("cognom").value + 

@@ -1,5 +1,5 @@
 <?php
-  require_once("./php/functions.php");  
+  require_once("./php/functions.php");
   if(isset($_GET["destroy"])){
       session_start();
       session_destroy();
@@ -10,8 +10,8 @@
         header('Location: ./index.php');
       }else{
           print_r($usuari);
-          if($usuari->TipoUsuario === 2){
-              header('Location: ./index-propietari.php');
+          if($usuari->TipoUsuario === 1){
+              header('Location: ./index-client.php');
           }else if($usuari->TipoUsuario === 3){
               header('Location: ./index-admin.php');
           }
@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="./css/nav.css">
 
 
-    <title>EAT IT Inicio</title>
+    <title>EAT IT Owner</title>
   </head>
 
   <body>

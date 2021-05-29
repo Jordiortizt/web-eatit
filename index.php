@@ -1,6 +1,16 @@
 <?php
   require_once("./php/functions.php");
-  checkUsuari();
+  $user = checkUsuari();
+
+  if(isset($user)){
+      if($user->TipoUsuario === 2){
+          header('Location: ./index-propietari.php');
+      }else if($user->TipoUsuario === 3){
+          header('Location: ./index-admin.php');
+      }else{
+          header('Location: ./index-client.php');
+      }
+  }
 ?>
 
 <!doctype html>
@@ -49,7 +59,7 @@
             
             <a href="./restaurants-client.php" class="menu-item"> <i class="fas fa-utensils"></i><span class="sr-only">Restaurants</span> </a>
             <a href="./login.php" class="menu-item"> <i class="fas fa-user-alt"></i><span class="sr-only">Login</span> </a>
-            <a href="./registre-usuari.php" class="menu-item"> <i class="fas fa-sign-in-alt"></i><span class="sr-only">Registre usuari</span> </a>
+            <a href="./registre.php" class="menu-item"> <i class="fas fa-sign-in-alt"></i><span class="sr-only">Registre usuari</span> </a>
           </nav>
 
         </div>

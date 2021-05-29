@@ -15,7 +15,7 @@
     
     <script src="./js/restaurants-client.js"></script>
     
-    <title>EAT IT Restaurants client</title>
+    <title>EAT IT Restaurants</title>
   </head>
 
   <body>

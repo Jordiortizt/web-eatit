@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="./css/background.css">
     <link rel="stylesheet" href="./css/form.css">
     
-    <script src="./js/registre-client.js"></script>
+    <script src="./js/registre.js"></script>
     
-    <title>EAT IT Registre client</title>
+    <title>EAT IT Registre</title>
   </head>
 
   <body>
@@ -50,9 +50,9 @@
               <div class="carta row justify-content-center align-items-center vh-100">
 
                 <!-- Inici sub-carta -->
-                <div class="sub-carta col-12 col-lg-6 py-5">
-                    <h2>Registre client</h2>
-                    <p class="sr-only">Registre destinat als clients no propietaris de l'aplicació</p>
+                <div class="sub-carta col-12 col-lg-6 py-5 mt-5">
+                    <h2>Registre</h2>
+                    <p class="sr-only">Registre</p>
                     <form action="" onsubmit="return false;">
                       <div class="mb-3">
                         <label for="nom" class="form-label">Nom</label>
