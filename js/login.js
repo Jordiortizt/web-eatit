@@ -20,9 +20,11 @@ function iniciarSessio() {
                     document.getElementById("errorPassword").innerHTML = "";
                     window.location.href = "./index-client.php";
                     alert("SI");
+                    console.log(this.responseText);
                 }
                 else {
                     alert("NO");
+                    console.log(this.responseText);
                     document.getElementById("errorUsuari").innerHTML = "* L'usuari o contrasenya no existeix";
                     document.getElementById("errorPassword").innerHTML = "* L'usuari o contrasenya no existeix";
                 }
