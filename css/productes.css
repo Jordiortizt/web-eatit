@@ -31,11 +31,22 @@ h1{
     font-size: 3em;
 }
 
-.producte{
-    padding: 10% 10% 5% 10%;
+.descripcio{
+    padding: 0% 10% 5% 10%;
+    text-align: justify;
 }
 
+.producte{
+    padding: 5% 10% 5% 10%;
+}
 
+.sub-producte{
+    
+}
+
+.sub-producte p{
+    text-align: left;
+}
 
 
 .sub-carta{

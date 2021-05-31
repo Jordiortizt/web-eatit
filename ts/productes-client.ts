@@ -13,3 +13,11 @@ window.onload = function restaurantsClient() {
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.send("");
 }
+
+function afegirProducte(id){
+    
+}
+
+function treureProducte(id){
+    
+}

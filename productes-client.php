@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/nav-restaurants.css">
     <link rel="stylesheet" href="./css/productes.css">
     
-    <script src="./js/restaurants-client.js"></script>
+    <script src="./js/productes-client.js"></script>
     
     <title>EAT IT Productes client</title>
   </head>
@@ -65,6 +65,7 @@
         <div class="container sub-productes" id="mostrarProductes">
             
             <h1>Te Quiero</h1>
+            <p class="sr-only">Productes del restaurant</p>
             
             <div class="row icones">
                <div class="col"> <i class="fas fa-utensils"></i> <br><span style="color:black">Tapas</span></div>
@@ -78,7 +79,59 @@
             </div>
             
             <div class="producte">
-                <p>Carne</p>
+               <hr>
+                
+                <div class="sub-producte">
+                   <div class="row">
+                       <div class="col-1"><i class="fas fa-minus"></i></div>
+                       <div class="col-10"><p>Patatas</p></div>
+                       <div class="col-1"><i class="fas fa-plus"></i></div>
+                   </div>
+                </div>
+                <hr>
+                <div class="sub-producte">
+                   <div class="row">
+                       <div class="col-1"><i class="fas fa-minus"></i></div>
+                       <div class="col-10"><p>Patatas</p></div>
+                       <div class="col-1"><i class="fas fa-plus"></i></div>
+                   </div>
+                </div>
+                <hr>
+                <div class="sub-producte">
+                   <div class="row">
+                       <div class="col-1"><i class="fas fa-minus"></i></div>
+                       <div class="col-10"><p>Patatas</p></div>
+                       <div class="col-1"><i class="fas fa-plus"></i></div>
+                   </div>
+                </div>
+                <hr>
+                <div class="sub-producte">
+                   <div class="row">
+                       <div class="col-1"><i class="fas fa-minus"></i></div>
+                       <div class="col-10"><p>Patatas</p></div>
+                       <div class="col-1"><i class="fas fa-plus"></i></div>
+                   </div>
+                </div>
+                <hr>
+                <div class="sub-producte">
+                   <div class="row">
+                       <div class="col-1"><i class="fas fa-minus"></i></div>
+                       <div class="col-10"><p>Patatas</p></div>
+                       <div class="col-1"><i class="fas fa-plus"></i></div>
+                   </div>
+                </div>
+                <hr>
+                <div class="sub-producte">
+                   <div class="row">
+                       <div class="col-1"><i class="fas fa-minus"></i></div>
+                       <div class="col-1"><p>1</p></div>
+                       <div class="col"><p>Patatas</p></div>
+                       <div class="col-1"><i class="fas fa-plus"></i></div>
+                   </div>
+                </div>
+                <hr>
+                
+                
             </div>
             
         </div>
