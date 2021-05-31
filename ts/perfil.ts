@@ -318,3 +318,45 @@ function comprovarUsuari() {
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.send("email=" + document.getElementById("usuari").value);
 }
+
+window.onload = function () {
+    cargarXML();
+};
+function cargarXML() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            mostrarXML(this);
+        }
+    };
+    xhttp.open("GET", "./php/cargaProvinciasXML.php", true);
+    xhttp.send();
+}
+
+function mostrarXML(xml) {
+    var xmlDoc = xml.responseXML;
+    var provincia = xmlDoc.getElementsByTagName("provincia");
+    var code = '<div class"mb-3"><label for="provincia" class="form-label">Provincia</label><select class="form-select" id="provincia" onchange="mostrarLocalidad()">';
+    for (var i = 0; i < provincia.length; i++) {
+        code += '<option value="' + provincia[i].getElementsByTagName("codigo")[0].childNodes[0].nodeValue + '">' + provincia[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + '</option>';
+    }
+    document.getElementById("output").innerHTML = code += '</select></div>';
+}
+
+function mostrarLocalidad() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            var xmlDoc = xhttp.responseXML;
+            var municipio = xmlDoc.getElementsByTagName("municipio");
+            var code = '<div class"mb-3"><label for="municipi" class="form-label">Municipi</label><select class="form-select" id="municipi">';
+            for (var i = 0; i < municipio.length; i++) {
+                code += '<option value="' + municipio[i].getElementsByTagName("codigo")[0].childNodes[0].nodeValue + '">' + municipio[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + '</option>';
+            }
+            document.getElementById("output2").innerHTML = code += '</select></div>';
+        }
+    };
+    xhttp.open("POST", "./php/cargaMunicipiosXML.php", true);
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhttp.send("provincia=" + document.getElementById("provincia").value);
+}

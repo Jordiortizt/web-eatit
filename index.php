@@ -60,6 +60,7 @@
             <a href="./restaurants-client.php" class="menu-item"> <i class="fas fa-utensils"></i><span class="sr-only">Restaurants</span> </a>
             <a href="./login.php" class="menu-item"> <i class="fas fa-user-alt"></i><span class="sr-only">Login</span> </a>
             <a href="./registre.php" class="menu-item"> <i class="fas fa-sign-in-alt"></i><span class="sr-only">Registre usuari</span> </a>
+            <a href="#" class="menu-item"> <i class="fas fa-info"></i><span class="sr-only">Termes d'usuari</span> </a>
           </nav>
 
         </div>

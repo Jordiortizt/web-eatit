@@ -69,9 +69,11 @@
               <span class="hamburger hamburger-3"></span>
             </label>
             
-            <a href="./restaurants-client.php" class="menu-item"> <i class="fas fa-utensils"></i><span class="sr-only">Restaurants</span> </a>
+            <a href="./restaurants-propietari.php" class="menu-item"> <i class="fas fa-utensils"></i><span class="sr-only">Restaurants</span> </a>
+            <p class="sr-only">Espai</p>
             <a href="./perfil.php" class="menu-item"> <i class="fas fa-user-alt"></i><span class="sr-only">Perfil</span> </a>
             <a href="?destroy=1" class="menu-item"> <i class="fas fa-power-off"></i><span class="sr-only">Tancar sessió</span> </a>
+            <a href="#" class="menu-item"> <i class="fas fa-info"></i><span class="sr-only">Termes d'usuari</span> </a>
             
           </nav>
 

@@ -14,6 +14,3 @@ window.onload = function restaurantsClient() {
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.send("");
 };
-function escollirRestaurant(id) {
-    location.replace();
-}

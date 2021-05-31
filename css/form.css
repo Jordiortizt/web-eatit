@@ -25,6 +25,11 @@
     border: 1px #3b7dff solid;
 }
 
+.sub-carta textarea{
+    border-radius: 10px;
+    border: 1px #3b7dff solid;
+}
+
 .sub-carta h2{
     padding-bottom: 10%;
 }

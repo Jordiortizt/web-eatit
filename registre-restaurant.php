@@ -1,10 +1,3 @@
-<?php
-  require_once("./php/functions.php");  
-    $usuari = checkUsuari();
-    if(!isset($usuari)){
-        header('Location: ./index.php');
-    }
-?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -19,9 +12,9 @@
     <link rel="stylesheet" href="./css/background.css">
     <link rel="stylesheet" href="./css/form.css">
     
-    <script src="./js/perfil.js"></script>
+    <script src="./js/registre-restaurant.js"></script>
     
-    <title>EAT IT Perfil</title>
+    <title>EAT IT Registre</title>
   </head>
 
   <body>
@@ -48,8 +41,8 @@
      
       <!-- Inici secció login -->
       <section id="login" class="login">
-        <h1 class="sr-only">Perfil</h1>
-        <p class="sr-only">Pagina de eat it perfil</p>
+        <h1 class="sr-only">Registre</h1>
+        <p class="sr-only">Pagina de eat it para registrar un restaurante</p>
         <!-- Inici container -->
         <div class="container">
               
@@ -58,43 +51,31 @@
 
                 <!-- Inici sub-carta -->
                 <div class="sub-carta col-12 col-lg-6 py-5 mt-5">
-                    <h2>Perfil</h2>
-                    <p class="sr-only">Perfil</p>
+                    <h2>Registre Restaurant</h2>
+                    <p class="sr-only">Registre</p>
                     <form action="" onsubmit="return false;">
                       <div class="mb-3">
                         <label for="nom" class="form-label">Nom</label>
-                        <input type="text" class="form-control" id="nom" value="<?php echo $usuari->Nombre ?>">
+                        <input type="text" class="form-control" id="nom">
                         <div id="errorNom" class="form-text text-danger"></div>
                       </div>
 
                       <div class="mb-3">
-                        <label for="cognom" class="form-label">Cognoms</label>
-                        <input type="text" class="form-control" id="cognom" value="<?php echo $usuari->Apellidos ?>">
-                        <div id="errorCognom" class="form-text text-danger"></div>
+                        <label for="desc" class="form-label">Descripció</label>
+                        <textarea class="form-control" rows="3" id="desc"></textarea>
+                        <div id="errorDesc" class="form-text text-danger"></div>
                       </div>
                       
                       <div class="mb-3">
-                        <label for="tel" class="form-label">Telefon</label>
-                        <input type="number" class="form-control" id="tel" value="<?php echo $usuari->Telefono ?>">
-                        <div id="errorTel" class="form-text text-danger"></div>
+                        <label for="tipus" class="form-label">Tipus de menjar</label>
+                        <input type="text" class="form-control" id="tipus">
+                        <div id="errorTipus" class="form-text text-danger"></div>
                       </div>
 
                       <div class="mb-3">
-                        <label for="dni" class="form-label">DNI</label>
-                        <input type="text" class="form-control" id="dni" value="<?php echo $usuari->DNICIF ?>">
-                        <div id="errorDni" class="form-text text-danger"></div>
-                      </div>
-
-                      <div class="mb-3">
-                        <label for="usuari" class="form-label">Nom d'usuari</label>
-                        <input type="text" class="form-control" id="usuari" value="<?php echo $usuari->Usuario ?>">
-                        <div id="errorUsuari" class="form-text text-danger"></div>
-                      </div>
-
-                      <div class="mb-3">
-                        <label for="email" class="form-label">Correu Electronic</label>
-                        <input type="email" class="form-control" id="email" value="<?php echo $usuari->Email ?>">
-                        <div id="errorEmail" class="form-text text-danger"></div>
+                        <label for="minim" class="form-label">Minim per comanda</label>
+                        <input type="number" class="form-control" id="minim">
+                        <div id="errorMinim" class="form-text text-danger"></div>
                       </div>
                       
                       <div id="output" class="mb-3"></div>
@@ -102,17 +83,28 @@
                       
                       <div class="mb-3">
                         <label for="direccio" class="form-label">Direcció</label>
-                        <input type="text" class="form-control" id="direccio" value="<?php echo $usuari->Direccion ?>" placeholder="No hi ha direcció registrada">
+                        <input type="text" class="form-control" id="direccio">
                         <div id="errorDireccio" class="form-text text-danger"></div>
                       </div>
                       
-                      <div id="paraInputs">
-                          <div class="mb-3">
-                            <button type="button" class="btn btn-info" onclick="mostrarInputsPass()">Cambiar contrasenya</button>
-                          </div>
+<!--
+                      <div class="mb-3">
+                          <label for="foto" class="form-label">Imatge del restaurant</label>
+                          <input class="form-control" type="file" id="foto">
                       </div>
-                      <a href="./index-admin.php" class="btn btn-cancelar float-start">Cancelar</a>
-                      <button type="submit" class="btn btn-iniciar float-end" onclick="change()">Enviar</button>
+-->
+                      
+                      <div class="mb-3">
+                        <label for="domicili" class="form-label">Servei a domicili</label>
+                        <select class="form-select" id="domicili">
+                          <option value="1" selected>Si</option>
+                          <option value="0">No</option>
+                        </select>
+                        <div id="errorDomicili" class="form-text text-danger"></div>
+                      </div>
+                      
+                      <a href="./index.php" class="btn btn-cancelar float-start">Cancelar</a>
+                      <button type="submit" class="btn btn-iniciar float-end" onclick="registre_restaurant()">Enviar</button>
                     </form>
                     
 
