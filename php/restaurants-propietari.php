@@ -13,7 +13,7 @@
     foreach($restaurants as $key => $value){
 
         echo    '<div class="restaurant" style="background-image: url(\''.$value->URLFoto.'\');">
-                    <div class="" id="'.$value->ID.'" onclick="escollirRestaurant(this.id)">
+                    <div class="" id="'.$value->ID.'" onclick="escollirRestaurant('.$value->ID.')">
                         <h2 class="">'.$value->Nombre.'</h2>
                         <p class="">'.$value->Descripcion.'</p>
                     </div>

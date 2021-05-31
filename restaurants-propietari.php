@@ -40,7 +40,7 @@
         <p class="sr-only">Espai</p>
         <p class="sr-only">Espai</p>
         <p class="sr-only">Espai</p>
-        <a href="./index.php" class="menu-item"> <i class="fas fa-home"></i> </a>
+        <a href="./index.php" class="menu-item"> <i class="fas fa-angle-left"></i> </a>
 
       </nav>
       <!-- </div> -->

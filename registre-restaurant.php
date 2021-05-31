@@ -103,7 +103,7 @@
                         <div id="errorDomicili" class="form-text text-danger"></div>
                       </div>
                       
-                      <a href="./index.php" class="btn btn-cancelar float-start">Cancelar</a>
+                      <a href="./restaurants-propietari.php" class="btn btn-cancelar float-start">Cancelar</a>
                       <button type="submit" class="btn btn-iniciar float-end" onclick="registre_restaurant()">Enviar</button>
                     </form>
                     
