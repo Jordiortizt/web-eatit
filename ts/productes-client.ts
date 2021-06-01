@@ -3,13 +3,13 @@ window.onload = function restaurantsClient() {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             if(this.response === "1") {
-                document.getElementById("mostrarRestaurants").innerHTML = this.response;
+                document.getElementById("productes").innerHTML = this.response;
             }else {
-                document.getElementById("mostrarRestaurants").innerHTML = this.response;
+                document.getElementById("productes").innerHTML = this.response;
             }
         }
     };
-    xhttp.open("POST", "./php/restaurants-client.php", true);
+    xhttp.open("POST", "./php/productes-client.php", true);
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.send("");
 }

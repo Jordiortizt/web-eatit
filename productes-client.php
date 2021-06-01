@@ -51,6 +51,7 @@
         <p class="sr-only">Espai</p>
         <p class="sr-only">Espai</p>
         <a href="./restaurants-client.php" class="menu-item"> <i class="fas fa-angle-left"></i> </a>
+
       </nav>
       <!-- </div> -->
     </header>
@@ -68,7 +69,7 @@
       </section>
 
       <section id="productes" class="productes container pt-5">
- 
+        
       </section>
         
       <section id="carret" class="carret">
