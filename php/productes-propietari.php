@@ -8,6 +8,11 @@
     $params = "?id=".intval($restaurant->ID);
 
     $productes = peticionGet('platos',$params)->platos;
+
+    $params = "?Restaurante=".intval($restaurant->ID);
+
+    $descomptes = peticionGet('descuentos',$params)->descuentos;
+
     $dom = '';
     $ico = '';
     if(intval($restaurant->ServicioDomicilio) == 1){
@@ -39,28 +44,71 @@
             <div class="producte">
                <h2>Menu</h2>
                <p class="sr-only">En aquest apartat es mostren el menu del restaurant</p>
-               <hr><!-- inici autogenerar-->';
+               <!-- inici autogenerar-->';
                
                
              if(count($productes) < 1){
                 $output = $output.'<p>No hi ha productes en aquest restaurant</p>';
              }else{
-                 foreach($productes as $key => $value){
-                 $output = $output.'<div class="sub-producte">
-                   <div class="row">
-                       <div class="col-1" id="1" onclick="restarProducte(this.id)"><i class="fas fa-minus"></i></div>
-                       <div class="col-1"><p id="num1">0</p></div>
-                       <div class="col-1 fotoProducte" style="background: url(\''.$value->URLFoto.'\'); background-size: cover;"></div>
-                       <div class="col"><p id="producte1">'.$value->Plato.'</p></div>
-                       <div class="col-2"><span id="preu1">'.$value->Precio.'</span><span>€</span></div>
-                       <div class="col-1" id="1" onclick="afegirProducte(this.id)"><i class="fas fa-plus"></i></div>
-                   </div>
-                </div>
-                <hr>';
-            }
+                 $output = $output.'<table class="table table-hover">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Imatge</th>
+                                  <th scope="col">Nom</th>
+                                  <th scope="col">Preu</th>
+                                  <th scope="col">Descripció</th>
+                                  <th></th>
+                                  <th></th>
+                                </tr>
+                              </thead>
+                              <tbody>';
+                              foreach($productes as $key => $value){
+                                    $output = $output.'<tr>
+                                      <td><img src="'.$value->URLFoto.'" class="fotoProducte"></td>
+                                      <td>'.$value->Plato.'</td>
+                                      <td>'.$value->Precio.'€</td>
+                                      <td>'.$value->Descripcion.'</td>
+                                      <td><button class="btn btn-info" onclick="modificarProducte('.$value->ID.')">Modificar</button></td>
+                                      <td><button class="btn btn-danger" onclick="eliminarProducte('.$value->ID.')">Eliminar</button></td>
+                                    </tr>';
+                              }
+                                
+                              $output = $output.'</tbody>
+                            </table>';
              }
                 
-                
-            $output = $output.'<!-- fi autogenerar--></div></div>';
+            $output = $output.'<!-- fi autogenerar--></div>
+            <div class="producte">
+               <h2>Descomptes</h2>
+               <p class="sr-only">En aquest apartat es mostren els descomptes del restaurant</p>
+               <!-- inici autogenerar-->';
+
+            if(count($descomptes) < 1){
+                $output = $output.'<p>No hi ha descomptes en aquest restaurant</p>';
+             }else{
+                 $output = $output.'<table class="table table-hover">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Codi de Descompte</th>
+                                  <th scope="col">Preu</th>
+                                  <th></th>
+                                  <th></th>
+                                </tr>
+                              </thead>
+                              <tbody>';
+                              foreach($descomptes as $key => $value){
+                                    $output = $output.'<tr>
+                                      <td>'.$value->Codigo.'</td>
+                                      <td>'.$value->TotalDescuento.'€</td>
+                                      <td><button class="btn btn-info" onclick="modificarDescompte('.$value->ID.')">Modificar</button></td>
+                                      <td><button class="btn btn-danger" onclick="eliminarDescompte('.$value->ID.')">Eliminar</button></td>
+                                    </tr>';
+                              }
+                                
+                              $output = $output.'</tbody>
+                            </table>';
+             }
+            $output = $output.'</div></div>';
+            
             echo $output;
 ?>
