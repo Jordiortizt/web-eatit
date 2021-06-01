@@ -14,9 +14,20 @@
 //     xhttp.send("");
 // }
 function afegirProducte(id) {
-    // var numProducte: number = + document.getElementById("num"+id).value;
-    var numProducte = document.getElementById("num" + id).value = Number("num" + id);
-    alert(numProducte);
+    var num = document.getElementById("num" + id).innerText.toString();
+    if (num >= "99") {
+        document.getElementById("num" + id).innerText = "99";
+    }
+    else {
+        document.getElementById("num" + id).innerText = (parseInt(num) + 1).toString();
+    }
 }
 function restarProducte(id) {
+    var num = document.getElementById("num" + id).innerText.toString();
+    if (num <= "0") {
+        document.getElementById("num" + id).innerText = "0";
+    }
+    else {
+        document.getElementById("num" + id).innerText = (parseInt(num) - 1).toString();
+    }
 }

@@ -17,7 +17,6 @@
     
     <title>EAT IT Productes client</title>
   </head>
-
   <body>
     <!-- Background -->
     <div class="box">
@@ -25,7 +24,7 @@
         <div class='wave -two'></div>
         <div class='wave -three'></div>
     </div>
-
+    
     <header>
 
       <nav class="menu">
@@ -80,6 +79,7 @@
             
             <div class="producte">
                <h2>Menu</h2>
+               <span id="numProductesMenu">2</span>
                <p class="sr-only">En aquest apartat es mostren el menu del restaurant</p>
                <hr> 
                
@@ -89,9 +89,10 @@
                 <div class="sub-producte">
                    <div class="row">
                        <div class="col-1" id="1" onclick="restarProducte(this.id)"><i class="fas fa-minus"></i></div>
-                       <div class="col-1"><p id="num1">0</p></div>
+                       <div class="col-1"><span id="num1">0</span></div>
                        <div class="col-1 fotoProducte" style="background: url('https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2018/12/cuanto-arroz-necesito-cocinar-para-100-personas.jpg'); background-size: cover;"></div>
-                       <div class="col"><p id="producte1">Bocata</p></div>
+                       <div class="col"><span id="producte1">Bocata</span></div>
+                       <div class="col-2"><span id="preu1">999</span><span>€</span></div>
                        <div class="col-1" id="1" onclick="afegirProducte(this.id)"><i class="fas fa-plus"></i></div>
                    </div>
                 </div>
@@ -104,7 +105,12 @@
             
         </div>
       </section>
+        
+      <section id="carret" class="carret">
+        
+        <button class="btn" onclick="escollirProductes()"></button>
 
+      </section>
     </main>
 
 
