@@ -65,12 +65,6 @@
       <h1 class="sr-only">Restaurants</h1>
       <p class="sr-only">Llista de restaurants</p>
 
-      <section class="filtre" id="filtre">
-        <div class="container">
-          
-        </div>
-      </section>
-
       <section id="productes" class="productes container pt-5">
          
       </section>
