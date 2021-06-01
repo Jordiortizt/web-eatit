@@ -15,7 +15,7 @@
         $ico = 'fa-motorcycle';
     }else{
         $dom = 'A recollir';
-        $ico = 'fa-store'; 
+        $ico = 'fa-store';
     }
 
         $output = '<div class="foto container" style="background: url(\''.$restaurant->URLFoto.'\');"></div>
