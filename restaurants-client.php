@@ -1,3 +1,14 @@
+<?php
+  require_once("./php/functions.php");
+  $usuari = checkUsuari();
+  if(isset($usuari)){
+    if($usuari->TipoUsuario === 2){
+      header('Location: ./index.php');
+      }else if($usuari->TipoUsuario === 3){
+          header('Location: ./index.php');
+      }
+  }
+?>
 <!doctype html>
 <html lang="es">
   <head>
