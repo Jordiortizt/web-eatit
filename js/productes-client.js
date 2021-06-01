@@ -32,3 +32,28 @@ function restarProducte(id) {
         document.getElementById("num" + id).innerText = (parseInt(num) - 1).toString();
     }
 }
+function escollirProductes() {
+    var num = document.getElementById("num1").innerText;
+    var numero = parseInt(num);
+    alert(numero + 2);
+    for (var i = 0; i < 5; i++) {
+        var num = document.getElementById("num" + i).innerText;
+        var numero = parseInt(num);
+        if (numero > 0) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    if (this.response === "1") {
+                        document.getElementById("productes").innerHTML = this.response;
+                    }
+                    else {
+                        document.getElementById("productes").innerHTML = this.response;
+                    }
+                }
+            };
+            xhttp.open("POST", "./php/productes-client.php", true);
+            xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhttp.send("");
+        }
+    }
+}

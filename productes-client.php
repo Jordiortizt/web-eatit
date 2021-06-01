@@ -18,7 +18,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./css/background.css">
     <link rel="stylesheet" href="./css/nav-restaurants.css">
@@ -73,9 +73,20 @@
       </section>
         
       <section id="carret" class="carret">
-        
-        <button class="btn" onclick="escollirProductes()"></button>
+      <div class="conainer">
+      <?php
 
+        if(isset($usuari)){
+          if($usuari->TipoUsuario === 1){
+            echo '<button class="btn btn-primary ferComanda" onclick="escollirProductes()">Fer comanda</button>';
+            }else{
+              echo '<a class="btn btn-primary ferComanda" href="./login.php">Fer comanda</a>';
+            }
+        }
+        ?>
+      </div>
+        
+        
       </section>
     </main>
 

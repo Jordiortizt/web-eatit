@@ -54,7 +54,11 @@ h1{
     border-radius: 20px 20px 20px 20px;
 }
 
-
+.ferComanda{
+    position: fixed;
+    margin: auto;
+    bottom: 5vh;
+}
 
 
 
