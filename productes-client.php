@@ -79,57 +79,25 @@
             </div>
             
             <div class="producte">
-               <hr>
+               <h2>Menu</h2>
+               <p class="sr-only">En aquest apartat es mostren el menu del restaurant</p>
+               <hr> 
+               
+               
+                <!-- inici autogenerar-->
+               
+                <div class="sub-producte">
+                   <div class="row">
+                       <div class="col-1" id="1" onclick="restarProducte(this.id)"><i class="fas fa-minus"></i></div>
+                       <div class="col-1"><p id="num1">0</p></div>
+                       <div class="col-1 fotoProducte" style="background: url('https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2018/12/cuanto-arroz-necesito-cocinar-para-100-personas.jpg'); background-size: cover;"></div>
+                       <div class="col"><p id="producte1">Bocata</p></div>
+                       <div class="col-1" id="1" onclick="afegirProducte(this.id)"><i class="fas fa-plus"></i></div>
+                   </div>
+                </div>
+                <hr>
                 
-                <div class="sub-producte">
-                   <div class="row">
-                       <div class="col-1"><i class="fas fa-minus"></i></div>
-                       <div class="col-10"><p>Patatas</p></div>
-                       <div class="col-1"><i class="fas fa-plus"></i></div>
-                   </div>
-                </div>
-                <hr>
-                <div class="sub-producte">
-                   <div class="row">
-                       <div class="col-1"><i class="fas fa-minus"></i></div>
-                       <div class="col-10"><p>Patatas</p></div>
-                       <div class="col-1"><i class="fas fa-plus"></i></div>
-                   </div>
-                </div>
-                <hr>
-                <div class="sub-producte">
-                   <div class="row">
-                       <div class="col-1"><i class="fas fa-minus"></i></div>
-                       <div class="col-10"><p>Patatas</p></div>
-                       <div class="col-1"><i class="fas fa-plus"></i></div>
-                   </div>
-                </div>
-                <hr>
-                <div class="sub-producte">
-                   <div class="row">
-                       <div class="col-1"><i class="fas fa-minus"></i></div>
-                       <div class="col-10"><p>Patatas</p></div>
-                       <div class="col-1"><i class="fas fa-plus"></i></div>
-                   </div>
-                </div>
-                <hr>
-                <div class="sub-producte">
-                   <div class="row">
-                       <div class="col-1"><i class="fas fa-minus"></i></div>
-                       <div class="col-10"><p>Patatas</p></div>
-                       <div class="col-1"><i class="fas fa-plus"></i></div>
-                   </div>
-                </div>
-                <hr>
-                <div class="sub-producte">
-                   <div class="row">
-                       <div class="col-1"><i class="fas fa-minus"></i></div>
-                       <div class="col-1"><p>1</p></div>
-                       <div class="col"><p>Patatas</p></div>
-                       <div class="col-1"><i class="fas fa-plus"></i></div>
-                   </div>
-                </div>
-                <hr>
+                <!-- fi autogenerar-->
                 
                 
             </div>
