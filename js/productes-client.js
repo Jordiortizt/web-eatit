@@ -1,18 +1,19 @@
-// window.onload = function restaurantsClient() {
-//     var xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function () {
-//         if (this.readyState == 4 && this.status == 200) {
-//             if(this.response === "1") {
-//                 document.getElementById("mostrarRestaurants").innerHTML = this.response;
-//             }else {
-//                 document.getElementById("mostrarRestaurants").innerHTML = this.response;
-//             }
-//         }
-//     };
-//     xhttp.open("POST", "./php/restaurants-client.php", true);
-//     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-//     xhttp.send("");
-// }
+window.onload = function restaurantsClient() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            if (this.response != 0) {
+                document.getElementById("productes").innerHTML = this.responseText;
+            }
+            else {
+                document.getElementById("productes").innerHTML = this.responseText;
+            }
+        }
+    };
+    xhttp.open("POST", "./php/productes-client.php", true);
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhttp.send("");
+};
 function afegirProducte(id) {
     var num = document.getElementById("num" + id).innerText.toString();
     if (num >= "99") {

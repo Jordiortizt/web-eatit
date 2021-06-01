@@ -54,4 +54,16 @@ function checkUsuari(){
         
 }
 
+function checkRestaurant(){
+    session_start();
+    if(isset($_SESSION["restaurant"])){
+        $restaurant = $_SESSION["restaurant"][0];
+        return $restaurant;
+    }
+    else{
+        // header('Location: ./index.php');
+    }
+        
+}
+
 ?>

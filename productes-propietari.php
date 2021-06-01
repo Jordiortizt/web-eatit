@@ -2,11 +2,13 @@
   require_once("./php/functions.php");
   $usuari = checkUsuari();
   if(isset($usuari)){
-    if($usuari->TipoUsuario === 2){
-      header('Location: ./index.php');
+    if($usuari->TipoUsuario === 1){
+          header('Location: ./index.php');
       }else if($usuari->TipoUsuario === 3){
           header('Location: ./index.php');
       }
+  }else{
+      header('Location: ./index.php');
   }
 ?>
 <!doctype html>
@@ -22,11 +24,11 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./css/background.css">
     <link rel="stylesheet" href="./css/nav-restaurants.css">
-    <link rel="stylesheet" href="./css/restaurants.css">
+    <link rel="stylesheet" href="./css/productes.css">
     
-    <script src="./js/restaurants-client.js"></script>
+    <script src="./js/productes-propietari.js"></script>
     
-    <title>EAT IT Restaurants</title>
+    <title>EAT IT Productes client</title>
   </head>
 
   <body>
@@ -47,11 +49,11 @@
           <span class="hamburger hamburger-3"></span>
         </label>
 
-        <a href="./index-client.php" class="menu-item"> <i class="fas fa-home"></i> </a>
+        <a href="./index.php" class="menu-item"> <i class="fas fa-home"></i> </a>
         <p class="sr-only">Espai</p>
         <p class="sr-only">Espai</p>
         <p class="sr-only">Espai</p>
-        <a href="./index-client.php" class="menu-item"> <i class="fas fa-angle-left"></i> </a>
+        <a href="./restaurants-propietari.php" class="menu-item"> <i class="fas fa-angle-left"></i> </a>
 
       </nav>
       <!-- </div> -->
@@ -69,26 +71,8 @@
         </div>
       </section>
 
-      <section id="restaurants" class="restaurants pt-5">
-        <div class="container" id="mostrarRestaurants">
-
-
-
-          <!-- <div class="restaurant" style="background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DY16RP9dtRgw&psig=AOvVaw2ABeBWx2HM0re406qGA3J5&ust=1622187048030000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPiP5eer6fACFQAAAAAdAAAAABAE');">
-            <div class="">
-              <h2 class="">EAT IT</h2>
-              <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-
-          <div class="restaurant">
-            <div class="">
-              <h2 class="">EAT IT</h2>
-              <p class="">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div> -->
-
-        </div>
+      <section id="productes" class="productes container pt-5">
+         
       </section>
 
     </main>

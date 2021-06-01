@@ -1,8 +1,13 @@
 <?php
+    require_once("./functions.php");
 
     $idRestaurant = $_POST["idRestaurant"];
 
-    $_SESSION["restaurant"] = $idRestaurant;
+    $params = $idRestaurant;
+    $restaurants = peticionGet('restaurantes',$params)->restaurantes;
+    
+    session_start();
+    $_SESSION["restaurant"] = $restaurants;
 
     if(isset($_SESSION["restaurant"])){
         echo 1;
