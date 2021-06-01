@@ -1,18 +1,18 @@
-// window.onload = function restaurantsClient() {
-//     var xhttp = new XMLHttpRequest();
-//     xhttp.onreadystatechange = function () {
-//         if (this.readyState == 4 && this.status == 200) {
-//             if(this.response === "1") {
-//                 document.getElementById("mostrarRestaurants").innerHTML = this.response;
-//             }else {
-//                 document.getElementById("mostrarRestaurants").innerHTML = this.response;
-//             }
-//         }
-//     };
-//     xhttp.open("POST", "./php/restaurants-client.php", true);
-//     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-//     xhttp.send("");
-// }
+window.onload = function restaurantsClient() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.response === "1") {
+                document.getElementById("productes").innerHTML = this.response;
+            }else {
+                document.getElementById("productes").innerHTML = this.response;
+            }
+        }
+    };
+    xhttp.open("POST", "./php/productes-client.php", true);
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhttp.send("");
+}
 
 
 
@@ -31,18 +31,5 @@ function restarProducte(id){
         document.getElementById("num"+id).innerText = "0";
     }else{
         document.getElementById("num"+id).innerText = (parseInt(num) - 1).toString();
-    }
-}
-
-window.onload = function(){
-    alert(document.getElementById("numProductesMenu").value);
-    for(var i = 0;i<document.getElementById("numProductesMenu").value;i++){
-        alert(i);
-    }
-}
-
-function escollirProductes(){
-    if(){
-
     }
 }
