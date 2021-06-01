@@ -3,6 +3,8 @@
 
     $restaurant = checkRestaurant();
 
+    
+
     // $tipo = $_POST["tipo"];
 
     $params = "?id=".intval($restaurant->ID);
@@ -38,7 +40,6 @@
             
             <div class="producte">
                <h2>Menu</h2>
-               <p id="numProductesMenu">'.count($productes).'</p>
                <p class="sr-only">En aquest apartat es mostren el menu del restaurant</p>
                <hr><!-- inici autogenerar-->';
                
@@ -51,8 +52,8 @@
                    <div class="row">
                        <div class="col-1" id="'.$value->ID.'" onclick="restarProducte(this.id)"><i class="fas fa-minus"></i></div>
                        <div class="col-1"><p id="num'.$value->ID.'">0</p></div>
-                       <div class="col-1 fotoProducte" id="foto'.$value->ID.'" style="background: url(\''.$value->URLFoto.'\'); background-size: cover;"></div>
-                       <div class="col"><p id="producte'.$value->ID.'">'.$value->Plato.'</p></div>
+                       <div class="col-1 fotoProducte" style="background: url(\''.$value->URLFoto.'\'); background-size: cover;"></div>
+                       <div class="col"><p id="producte1">'.$value->Plato.'</p></div>
                        <div class="col-2"><span id="preu'.$value->ID.'">'.$value->Precio.'</span><span>€</span></div>
                        <div class="col-1" id="'.$value->ID.'" onclick="afegirProducte(this.id)"><i class="fas fa-plus"></i></div>
                    </div>

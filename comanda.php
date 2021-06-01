@@ -1,12 +1,6 @@
 <?php
   require_once("./php/functions.php");
   $usuari = checkUsuari();
-  
-  // isset($_SESSION["carro"]) ? unset($_SESSION["carro"]) : null;
-
-if(isset($_SESSION["carro"])){
-    unset($_SESSION["carro"]);
-  }
 
   if(isset($usuari)){
     if($usuari->TipoUsuario === 2){
@@ -16,8 +10,18 @@ if(isset($_SESSION["carro"])){
       }
   }
 
-
+  if(isset($_SESSION["carro"])){
+    $carro = $_SESSION["carro"];
+  }
 ?>
+
+<?php
+          foreach($carro as $key => $value){
+            echo $value["id"];
+            echo $value["titol"];
+            echo '<br>';
+          }
+        ?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -33,7 +37,7 @@ if(isset($_SESSION["carro"])){
     <link rel="stylesheet" href="./css/nav-restaurants.css">
     <link rel="stylesheet" href="./css/productes.css">
     
-    <script src="./js/productes-client.js"></script>
+    <script src="./js/comanda.js"></script>
     
     <title>EAT IT Productes client</title>
   </head>
@@ -80,14 +84,16 @@ if(isset($_SESSION["carro"])){
       <section id="productes" class="productes container pt-5">
         
       </section>
-        
+      
+
+        <h1>bondia</h1>
       <section id="carret" class="carret">
       <div class="conainer">
       <?php
 
         if(isset($usuari)){
           if($usuari->TipoUsuario === 1){
-            echo '<a class="btn btn-primary ferComanda" href="./comanda.php">Fer comanda</a>';
+            echo '<button class="btn btn-primary ferComanda" onclick="escollirProductes()">Fer comanda</button>';
             }else{
               echo '<a class="btn btn-primary ferComanda" href="./login.php">Fer comanda</a>';
             }
