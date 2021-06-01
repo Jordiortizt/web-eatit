@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Jordiortizt/web-eatit#readme",
   "devDependencies": {
     "http-server": "^0.12.3"
+  },
+  "dependencies": {
+    "tsc": "^2.0.3"
   }
 }

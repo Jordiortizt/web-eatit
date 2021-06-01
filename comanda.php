@@ -14,14 +14,6 @@
     $carro = $_SESSION["carro"];
   }
 ?>
-
-<?php
-          foreach($carro as $key => $value){
-            echo $value["id"];
-            echo $value["titol"];
-            echo '<br>';
-          }
-        ?>
 <!doctype html>
 <html lang="es">
   <head>
@@ -39,7 +31,7 @@
     
     <script src="./js/comanda.js"></script>
     
-    <title>EAT IT Productes client</title>
+    <title>EAT IT Comanda</title>
   </head>
   <body>
     <!-- Background -->
@@ -82,25 +74,74 @@
       </section>
 
       <section id="productes" class="productes container pt-5">
-        
+        <div class="container sub-productes" id="mostrarProductes">
+            
+            <h1>Dades Comanda</h1>
+            <p class="sr-only">Dades de la comanda</p>
+                
+            
+            <div class="producte">
+               <!-- inici autogenerar-->
+               
+               <?php
+                $output = "";
+                $total = 0;
+             if(count($carro) < 1){
+                $output = $output.'<p>No hi ha productes en aquest restaurant</p>';
+             }else{
+                 $output = '<table class="table table-hover">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Producte</th>
+                                  <th scope="col">Preu</th>
+                                </tr>
+                              </thead>
+                              <tbody>';
+                              foreach($carro as $key => $value){
+                                    $output = $output.'<tr>
+                                      <td>'.$value["titol"].'</td>
+                                      <td>'.$value["preu"].'€</td>
+                                    </tr>';
+                                  $total += intval($value["preu"]);
+                              }
+                                
+                              $output = $output.'<tr class="table-dark">
+                              <td>Total:</td>
+                              <td><span id="total">'.$total.'</span>€</td>
+                              </tr>
+                              </tbody>
+                            </table>';
+             }
+            echo $output;
+                ?>
+                <form action="" onsubmit="return false;">
+                    <div class="mb-3">
+                        <label for="descompte" class="form-label">Descompte</label>
+                        <select id="descompte" class="form-select" onchange="modificarDescompte(<?php echo $total ?>)">
+                            <option value="0">Selecciona una opció</option>
+                            <?php
+                                $restaurant = checkRestaurant();
+                                $params = "?Restaurante=".intval($restaurant->ID);
+                                $descomptes = peticionGet('descuentos',$params)->descuentos;
+                                foreach($descomptes as $key => $value){
+                                    echo '<option value="'.$value->TotalDescuento.'" id="'.$value->ID.'">'.$value->Codigo.'</option>';
+                                }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="comentari" class="form-label">Comentario</label>
+                        <textarea class="form-control" rows="3" id="comentari" placeholder="Escriu aqui el teu comentari..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary ferComanda" onclick="confirmarComanda()">Confirmar Comanda</button>
+                </form>
+          
+              </div>
+          </div>
       </section>
-      
 
-        <h1>bondia</h1>
       <section id="carret" class="carret">
-      <div class="conainer">
-      <?php
-
-        if(isset($usuari)){
-          if($usuari->TipoUsuario === 1){
-            echo '<button class="btn btn-primary ferComanda" onclick="escollirProductes()">Fer comanda</button>';
-            }else{
-              echo '<a class="btn btn-primary ferComanda" href="./login.php">Fer comanda</a>';
-            }
-        }
-        ?>
-      </div>
-        
+          
         
       </section>
     </main>
