@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/nav-restaurants.css">
     <link rel="stylesheet" href="./css/productes.css">
     
-    <script src="./js/productes-client.js"></script>
+    <script src="./js/productes-propietari.js"></script>
     
     <title>EAT IT Productes client</title>
   </head>
@@ -36,7 +36,7 @@
           <span class="hamburger hamburger-3"></span>
         </label>
 
-        <a href="./index-client.php" class="menu-item"> <i class="fas fa-home"></i> </a>
+        <a href="./index.php" class="menu-item"> <i class="fas fa-home"></i> </a>
         <p class="sr-only">Espai</p>
         <p class="sr-only">Espai</p>
         <p class="sr-only">Espai</p>
@@ -60,7 +60,6 @@
 
       <section id="productes" class="productes container pt-5">
          
-        
       </section>
 
     </main>

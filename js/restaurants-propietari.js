@@ -14,12 +14,12 @@ window.onload = function restaurantsPropietari() {
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.send("");
 };
-function escollirRestaurant(id) {
+function escollirRestaurantPropietari(restaurant) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             if (this.response === "1") {
-                window.location.href = './productes-client.php';
+                window.location.href = './productes-propietari.php';
             }
             else {
                 document.getElementById("mostrarRestaurants").innerHTML = this.response;
@@ -28,5 +28,5 @@ function escollirRestaurant(id) {
     };
     xhttp.open("POST", "./php/productes-restaurant.php", true);
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhttp.send("idRestaurant=" + id);
+    xhttp.send("idRestaurant=" + restaurant);
 }
