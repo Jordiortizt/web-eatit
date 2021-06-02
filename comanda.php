@@ -12,6 +12,8 @@
 
   if(isset($_SESSION["carro"])){
     $carro = $_SESSION["carro"];
+  }else{
+      header('Location: ./productes-client.php');
   }
 ?>
 <!doctype html>

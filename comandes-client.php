@@ -1,23 +1,13 @@
 <?php
-    error_reporting(0);
   require_once("./php/functions.php");
   $usuari = checkUsuari();
-  
-  // isset($_SESSION["carro"]) ? unset($_SESSION["carro"]) : null;
-
-if(isset($_SESSION["carro"])){
-    unset($_SESSION["carro"]);
-  }
-
   if(isset($usuari)){
     if($usuari->TipoUsuario === 2){
-          header('Location: ./index.php');
+      header('Location: ./index.php');
       }else if($usuari->TipoUsuario === 3){
           header('Location: ./index.php');
       }
   }
-
-
 ?>
 <!doctype html>
 <html lang="es">
@@ -32,12 +22,14 @@ if(isset($_SESSION["carro"])){
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./css/background.css">
     <link rel="stylesheet" href="./css/nav-restaurants.css">
+    <link rel="stylesheet" href="./css/restaurants.css">
     <link rel="stylesheet" href="./css/productes.css">
     
-    <script src="./js/productes-client.js"></script>
+    <script src="./js/comandes-client.js"></script>
     
-    <title>EAT IT Productes client</title>
+    <title>EAT IT Comandes</title>
   </head>
+
   <body>
     <!-- Background -->
     <div class="box">
@@ -45,7 +37,7 @@ if(isset($_SESSION["carro"])){
         <div class='wave -two'></div>
         <div class='wave -three'></div>
     </div>
-    
+
     <header>
 
       <nav class="menu">
@@ -60,7 +52,7 @@ if(isset($_SESSION["carro"])){
         <p class="sr-only">Espai</p>
         <p class="sr-only">Espai</p>
         <p class="sr-only">Espai</p>
-        <a href="./restaurants-client.php" class="menu-item"> <i class="fas fa-angle-left"></i> </a>
+        <a href="./index-client.php" class="menu-item"> <i class="fas fa-angle-left"></i> </a>
 
       </nav>
       <!-- </div> -->
@@ -78,33 +70,10 @@ if(isset($_SESSION["carro"])){
         </div>
       </section>
 
-      <section id="productes" class="productes container pt-5">
+      <section id="comandes" class="productes container pt-5">
         
       </section>
-        
-      <section id="carret" class="carret">
-      <div class="conainer">
-      <?php
-            $restaurant = checkRestaurant();
 
-            $params = "?id=".intval($restaurant->ID);
-
-            $productes = peticionGet('platos',$params)->platos;
-          
-        if(isset($usuari)){
-          if($usuari->TipoUsuario === 1 && count($productes) > 0){
-                echo '<a class="btn btn-primary ferComanda" href="./comanda.php">Fer comanda</a>';
-            }else if($usuari->TipoUsuario === 1 && count($productes) <= 0){
-              echo '';
-            }else{
-              echo '<a class="btn btn-primary ferComanda" href="./login.php">Fer comanda</a>';
-          }
-        }
-        ?>
-      </div>
-        
-        
-      </section>
     </main>
 
 

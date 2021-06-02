@@ -23,16 +23,22 @@
     }
     
     $peticio = peticionPost("pedidos",$arrayParams);
-    $ok = json_encode($peticio);
 
+    $params = "";
+    $pedidos = peticionGet('pedidos',$params)->pedidos;
+    foreach($pedidos as $key => $value){
+        $id=$value->ID;
+    }
 //    session_start();
 //    $_SESSION["pedido"] = (object)$arrayParams;
 
+    
 
-
-
-
-
+    foreach($_SESSION["carro"] as $key => $value){
+        $arrayParams["IDPedido"] = intval($id);
+        $arrayParams["IDPlato"] = intval($value["id"]);
+        $peticio2 = peticionPost("platospedido",$arrayParams);
+    }
 
     echo 1;
 ?>

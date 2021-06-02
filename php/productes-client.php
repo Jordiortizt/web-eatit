@@ -8,6 +8,11 @@
     $params = "?id=".intval($restaurant->ID);
 
     $productes = peticionGet('platos',$params)->platos;
+
+    $params = "?Restaurante=".intval($restaurant->ID);
+
+    $descomptes = peticionGet('descuentos',$params)->descuentos;
+
     $dom = '';
     $ico = '';
     if(intval($restaurant->ServicioDomicilio) == 1){
@@ -38,7 +43,6 @@
             
             <div class="producte">
                <h2>Menu</h2>
-               <p id="numProductesMenu">'.count($productes).'</p>
                <p class="sr-only">En aquest apartat es mostren el menu del restaurant</p>
                <hr><!-- inici autogenerar-->';
                
@@ -55,13 +59,32 @@
                        <div class="col"><p id="producte'.$value->ID.'">'.$value->Plato.'</p></div>
                        <div class="col-2"><span id="preu'.$value->ID.'">'.$value->Precio.'</span><span>€</span></div>
                        <div class="col-1" id="'.$value->ID.'" onclick="afegirProducte(this.id)"><i class="fas fa-plus"></i></div>
-                   </div>
-                </div>
-                <hr>';
-            }
+                       </div>
+                    </div>
+                    <hr>';
+                }
              }
                 
                 
-            $output = $output.'<!-- fi autogenerar--></div></div>';
+            $output = $output.'<!-- fi autogenerar--></div>
+            <div class="producte">
+               <h2>Descomptes</h2>
+               <p class="sr-only">En aquest apartat es mostren els descomptes del restaurant</p>
+               <hr><!-- inici autogenerar-->';
+
+            if(count($descomptes) < 1){
+                $output = $output.'<p>No hi ha descomptes en aquest restaurant</p>';
+             }else{
+                    foreach($descomptes as $key => $value){
+                        $output = $output.'<div class="sub-producte">
+                                                <div class="row">
+                                                    <div class="col-6">'.$value->Codigo.'</div>
+                                                    <div class="col-6">'.$value->TotalDescuento.'€</div>
+                                                </div>
+                                            </div><hr>';
+                    }
+             }
+            $output = $output.'</div></div>';
+            
             echo $output;
 ?>

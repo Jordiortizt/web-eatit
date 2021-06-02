@@ -3,9 +3,9 @@ function confirmarComanda(){
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             if(this.response === "1") {
-                alert(this.responseText);
+                console.log(this.responseText);
             }else {
-                alert(this.responseText);
+                console.log(this.responseText);
             }
         }
     };
@@ -21,7 +21,4 @@ function modificarDescompte(total){
     var resultat = parseInt(total) - parseInt(descompte);
 
     document.getElementById("total").innerHTML = resultat.toString();
-
-    console.log(parseInt(total));
-    console.log(parseInt(descompte));
 }
