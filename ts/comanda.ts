@@ -3,9 +3,9 @@ function confirmarComanda(){
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             if(this.response === "1") {
-                console.log(this.responseText);
+                window.location.href = "./comandes-client.php";
             }else {
-                console.log(this.responseText);
+                window.location.href = "./comandes-client.php";
             }
         }
     };
@@ -19,6 +19,9 @@ function confirmarComanda(){
 function modificarDescompte(total){
     var descompte = document.getElementById("descompte").value;
     var resultat = parseInt(total) - parseInt(descompte);
-
-    document.getElementById("total").innerHTML = resultat.toString();
+    if(resultat < 0){
+        document.getElementById("total").innerHTML = '0';
+    }else{
+        document.getElementById("total").innerHTML = resultat.toString();
+    }
 }
