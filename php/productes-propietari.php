@@ -58,7 +58,6 @@
                                   <th scope="col">Preu</th>
                                   <th scope="col">Descripció</th>
                                   <th></th>
-                                  <th></th>
                                 </tr>
                               </thead>
                               <tbody>';
@@ -68,8 +67,7 @@
                                       <td>'.$value->Plato.'</td>
                                       <td>'.$value->Precio.'€</td>
                                       <td>'.$value->Descripcion.'</td>
-                                      <td><button class="btn btn-info" onclick="modificarProducte('.$value->ID.')">Modificar</button></td>
-                                      <td><button class="btn btn-danger" onclick="eliminarProducte('.$value->ID.')">Eliminar</button></td>
+                                      <td><button class="btn btn-info mb-1" onclick="modificarProducte('.$value->ID.')">Modificar</button><br><button class="btn btn-danger" onclick="eliminarProducte('.$value->ID.')">Eliminar</button></td>
                                     </tr>';
                               }
                                 

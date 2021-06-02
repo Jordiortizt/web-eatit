@@ -3,11 +3,15 @@
 
     $nom = $_POST["nom"];
     $cognom = $_POST["cognom"];
-    $tel = $_POST["tel"];
+    $tel = intval($_POST["tel"]);
     $email = $_POST["email"];
     $dni = $_POST["dni"];
     $usuari = $_POST["usuari"];
-    $pass = $_POST["password"];
+    if(!isset($_POST["password"])){
+        $pass = null;
+    }else{
+        $pass = $_POST["password"];
+    }
     $direccio = $_POST["direccio"];
     $ciutat = $_POST["ciutat"];
 
@@ -18,13 +22,13 @@
     //     'SourceFile' => $fotoTmp,
     // ]);
     // $s3_route = "https://pfinaljp.s3-eu-west-1.amazonaws.com/fotosUsuarios/" . $fotoName;
-    
-    $pass = hash('sha512',$pass);
 
     $arrayParams["Nombre"] = $nom;
     $arrayParams["Apellidos"] = $cognom;
     $arrayParams["Usuario"] = $usuari;
-    $arrayParams["Password"] = $pass;
+    if($pass != null){
+        $arrayParams["Password"] = hash('sha512',$pass);
+    }
     $arrayParams["Email"] = $email;
     $arrayParams["Telefono"] = $tel;
     $arrayParams["DNICIF"] = $dni;
@@ -37,7 +41,7 @@
     session_start();
     $_SESSION["userEatit"] = (object)$arrayParams;
 
-    echo 1;
+    print_r($arrayParams);
 
 
 

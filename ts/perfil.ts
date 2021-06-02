@@ -1,3 +1,4 @@
+var btn = 0;
 // comprovar Format
 var email = false;
 var tel = false;
@@ -97,29 +98,31 @@ function change() {
     }
 
     // Contrasenya
-    
-    if(document.getElementById("password").value == ""){
-        document.getElementById("errorPassword").innerHTML = "* La contrasenya no pot estar en blanc.";
-    }else{
-        document.getElementById("errorPassword").innerHTML = "";
-        // Format
-        
-        if(formatPass()){
-            document.getElementById("errorEmail").innerHTML = "";
+    if(btn == 1){
+        if(document.getElementById("newpass").value == ""){
+            document.getElementById("errorNewpass").innerHTML = "* La contrasenya no pot estar en blanc.";
         }else{
-            document.getElementById("errorPassword").innerHTML = "* La contrasenya ha de ser minim 8 caracters";
+            document.getElementById("errorNewpass").innerHTML = "";
+            // Format
+            
+            if(formatPass()){
+                document.getElementById("errorNewpass").innerHTML = "";
+            }else{
+                document.getElementById("errorNewpass").innerHTML = "* La contrasenya ha de ser minim 8 caracters";
+            }
         }
     }
 
-
-    if(document.getElementById("nom").value != "" && 
+    if(btn == 1){
+        if(document.getElementById("nom").value != "" && 
         document.getElementById("cognom").value != "" && 
         document.getElementById("tel").value != "" && 
         document.getElementById("dni").value != "" &&
         document.getElementById("usuari").value != "" &&
         document.getElementById("email").value != "" &&
-        document.getElementById("password").value != "" &&
-        document.getElementById("tipus").value != "" &&
+        document.getElementById("newpass").value != "" &&
+        document.getElementById("direccio").value != "" &&
+        document.getElementById("municipi").value != "" &&
         email == true && tel == true && dni == true && pass == true //&&
         //bbddEmail == true && bbddTel == true && bbddDni == true
         ){
@@ -129,10 +132,10 @@ function change() {
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 if(this.responseText == "1") {
-                    alert(this.responseText);
+                    alert('Ole');
                     location.reload();
                 }else{
-                    alert(this.responseText);
+                    alert('aAAAH');
                     
                 }
                 
@@ -146,9 +149,47 @@ function change() {
                 "&email=" + document.getElementById("email").value +
                 "&dni=" + document.getElementById("dni").value +
                 "&usuari=" + document.getElementById("usuari").value +
-                "&password=" + document.getElementById("password").value +
+                "&password=" + document.getElementById("newpass").value +
                 "&direccio=" + document.getElementById("direccio").value +
-                "&ciutat=" + document.getElementById("ciutat").value);
+                "&ciutat=" + document.getElementById("municipi").value);
+        }
+    }else{
+        if(document.getElementById("nom").value != "" && 
+        document.getElementById("cognom").value != "" && 
+        document.getElementById("tel").value != "" && 
+        document.getElementById("dni").value != "" &&
+        document.getElementById("usuari").value != "" &&
+        document.getElementById("email").value != "" &&
+        document.getElementById("direccio").value != "" &&
+        document.getElementById("municipi").value != "" &&
+        email == true && tel == true && dni == true//&&
+        //bbddEmail == true && bbddTel == true && bbddDni == true
+        ){
+        
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                if(this.responseText == "1") {
+                    alert('Ole');
+                    location.reload();
+                }else{
+                    console.log(this.responseText);
+                }
+                
+            }
+        };
+        xhttp.open("POST", "./php/change.php", true);
+        xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhttp.send("nom=" + document.getElementById("nom").value + 
+                "&cognom=" + document.getElementById("cognom").value + 
+                "&tel=" + document.getElementById("tel").value +
+                "&email=" + document.getElementById("email").value +
+                "&dni=" + document.getElementById("dni").value +
+                "&usuari=" + document.getElementById("usuari").value +
+                "&direccio=" + document.getElementById("direccio").value +
+                "&ciutat=" + document.getElementById("municipi").value);
+        }
     }
 }
 
@@ -157,6 +198,7 @@ function change() {
 //
 
 function mostrarInputsPass(){
+    btn = 1;
     document.getElementById("paraInputs").innerHTML = '<div class="mb-3"><label for="oldpass" class="form-label">Antiga Contrasenya</label><input type="text" class="form-control" id="oldpass"><div id="errorOldPass" class="form-text text-danger"></div></div><div class="mb-3"><label for="newpass" class="form-label">Nova Contrasenya</label><input type="text" class="form-control" id="newpass"><div id="errorNewpass" class="form-text text-danger"></div></div>';
 }
 
@@ -351,7 +393,7 @@ function mostrarLocalidad() {
             var municipio = xmlDoc.getElementsByTagName("municipio");
             var code = '<div class"mb-3"><label for="municipi" class="form-label">Municipi</label><select class="form-select" id="municipi">';
             for (var i = 0; i < municipio.length; i++) {
-                code += '<option value="' + municipio[i].getElementsByTagName("codigo")[0].childNodes[0].nodeValue + '">' + municipio[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + '</option>';
+                code += '<option value="' + municipio[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + '">' + municipio[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + '</option>';
             }
             document.getElementById("output2").innerHTML = code += '</select></div>';
         }
