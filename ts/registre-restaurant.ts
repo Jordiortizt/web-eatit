@@ -55,7 +55,7 @@ function registre_restaurant() {
     }else{
         document.getElementById("errorNom").innerHTML = "";
 
-        comprovarNom();
+        // comprovarNom();
     }
 
     // Descripció //
@@ -118,14 +118,13 @@ function registre_restaurant() {
         document.getElementById("minim").value != "" &&
         document.getElementById("municipi").value != "" &&
         document.getElementById("direccio").value != "" &&
-        document.getElementById("domicili").value != "" && 
-        bbddNom == true){
+        document.getElementById("domicili").value != "" /* && 
+        bbddNom == true*/){
         
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 if(this.responseText == "1") {
-                    alert(this.responseText);
                     window.location.href = "./index.php";
                 }else{
                     alert(this.responseText);
@@ -143,11 +142,7 @@ function registre_restaurant() {
                 "&direccio=" + document.getElementById("direccio").value +
                 "&domicili=" + document.getElementById("domicili").value);
     }else{
-        alert("bbddEmail "+bbddEmail);
-        alert("bbddTel "+bbddTel);
-        alert("bbddDni "+bbddDni);
-        alert("bbddUsuari "+bbddUsuari);
-
+        alert(bbddNom);
     }
 }
 

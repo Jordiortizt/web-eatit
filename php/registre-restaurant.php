@@ -27,7 +27,7 @@
     $arrayParams["Minimo"] = $minim;
     $arrayParams["URLFoto"] = "https://www.antiguarestaurante.com/es/media/ee367c51f9/ee367c51f659c9963f83cba87c831516.cms.jpg";
     $arrayParams["IDPropietario"] = intval($usuari->id);
-    $arrayParams["DocumentoValido"] = "Inventario";
+    $arrayParams["DocumentoValido"] = "Invent";
     $arrayParams["Aceptado"] = 0;
     $arrayParams["ServicioDomicilio"] = $domicili;
 

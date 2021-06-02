@@ -1,17 +1,14 @@
 <?php
     require_once("./functions.php");
 
+    $user = checkUsuari();
+
     $nom = $_POST["nom"];
     $cognom = $_POST["cognom"];
     $tel = intval($_POST["tel"]);
     $email = $_POST["email"];
     $dni = $_POST["dni"];
     $usuari = $_POST["usuari"];
-    if(!isset($_POST["password"])){
-        $pass = null;
-    }else{
-        $pass = $_POST["password"];
-    }
     $direccio = $_POST["direccio"];
     $ciutat = $_POST["ciutat"];
 
@@ -23,22 +20,19 @@
     // ]);
     // $s3_route = "https://pfinaljp.s3-eu-west-1.amazonaws.com/fotosUsuarios/" . $fotoName;
 
+//    $arrayParams["ID"] = intval($user->id); 
     $arrayParams["Nombre"] = $nom;
     $arrayParams["Apellidos"] = $cognom;
     $arrayParams["Usuario"] = $usuari;
-    if($pass != null){
-        $arrayParams["Password"] = hash('sha512',$pass);
-    }
+    $arrayParams["Password"] = $user->Password;
     $arrayParams["Email"] = $email;
     $arrayParams["Telefono"] = $tel;
+    $arrayParams["TipoUsuario"] = intval($user->TipoUsuario);
     $arrayParams["DNICIF"] = $dni;
-    $arrayParams["Direccion"] = $direccio;
-    $arrayParams["Ciudad"] = $ciutat;
 
     $peticio = peticionPut("usuarios",$arrayParams);
     $ok = json_encode($peticio);
 
-    session_start();
     $_SESSION["userEatit"] = (object)$arrayParams;
 
     print_r($arrayParams);
