@@ -17,13 +17,14 @@
     if(count($restaurantes) < 1){
                 $output = $output.'<p>No tens cap restaurant</p>';
     }else{
-            $output = $output.'<table class="table table-hover">
+            $output = $output.'<div class="col"><table class="table table-hover">
                               <thead>
                                 <tr>
                                   <th scope="col">Restaurant</th>
                                   <th scope="col">Descompte</th>
                                   <th scope="col">Estat</th>
                                   <th scope="col">Total</th>
+                                  <th><th>
                                 </tr>
                               </thead>
                               <tbody>';
@@ -34,7 +35,7 @@
             foreach($pedidos as $key => $valor){
                 $output = $output.'<tr><td>'.$value->Nombre.'</td>';
 
-                $params = intval($value->IDDescuento);
+                $params = intval($valor->IDDescuento);
                 $descuento = peticionGet('descuentos',$params)->descuentos;
 
                 $output = $output.'<td>'.$descuento[0]->Codigo.'</td>
@@ -47,11 +48,16 @@
                     $output = $output.'<span class="text-danger">Tancada</span>';
                 }
                 $output = $output.'</td>
-                                          <td>'.$valor->TotalPedido.'€</td>
-                                        </tr>';
+                                          <td>'.$valor->TotalPedido.'€</td>';
+                if(intval($valor->Estado) == 1){
+                    $output = $output.'<td><button class="btn btn-success" onclick=cambiarEstat('.intval($valor->Estado).','.intval($valor->ID).')>Comanda Llesta</button></td>';
+                }else if(intval($valor->Estado) == 2){
+                    $output = $output.'<td><button class="btn btn-danger" onclick=cambiarEstat('.intval($valor->Estado).','.intval($valor->ID).')>Comanda Finalitzada</button></td>';
+                }
+                    $output = $output.'</tr>';
             }
         }
     }
-    $output = $output.'</div></div>';
+    $output = $output.'</tbody></div></div></div>';
     echo $output;
 ?>
