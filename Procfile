@@ -1,0 +1,1 @@
+web vendorbinheroku-php-apache2 -i custom_php.ini
