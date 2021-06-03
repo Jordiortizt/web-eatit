@@ -75,7 +75,7 @@
                       
                       <div class="mb-3">
                         <label for="preu" class="form-label">Preu</label>
-                        <input type="number" class="form-control" id="preu" name="preu">
+                        <input type="number" class="form-control" id="preu" name="preu" step="0.01">
                         <div id="errorMinim" class="form-text text-danger"></div>
                       </div>
 

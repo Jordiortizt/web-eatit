@@ -81,7 +81,7 @@
                       
                       <div class="mb-3">
                         <label for="preu" class="form-label">Preu</label>
-                        <input type="number" class="form-control" id="preu" name="preu" value="<?php echo $productos[0]->Precio ?>" required>
+                        <input type="number" class="form-control" id="preu" name="preu" step="0.01" value="<?php echo $productos[0]->Precio ?>" required>
                         <div id="errorMinim" class="form-text text-danger"></div>
                       </div>
 
