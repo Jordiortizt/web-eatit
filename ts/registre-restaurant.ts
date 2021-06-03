@@ -15,6 +15,7 @@ function cargarXML() {
 }
 
 function mostrarXML(xml) {
+    console.log(xml);
     var xmlDoc = xml.responseXML;
     var provincia = xmlDoc.getElementsByTagName("provincia");
     var code = '<div class"mb-3"><label for="provincia" class="form-label">Provincia</label><select class="form-select" id="provincia" onchange="mostrarLocalidad()">';

@@ -55,10 +55,6 @@
       ?>
         
         <div class="vertical">
-        <?php
-            // print_r($usuari);
-            echo '<h1>'.$usuari->Nombre.' '.$usuari->Apellidos.'</h1>'
-            ?>
           <nav class="menu">
             <!-- <h1></h1><h1></h1> -->
             <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
