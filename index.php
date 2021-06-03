@@ -14,7 +14,7 @@
 ?>
 
 <!doctype html>
-<html lang="es">
+<html lang="ca">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -71,7 +71,8 @@
     <main>
       <section>
         <div class="container">
-          
+          <h1 class="sr-only">Pagina inicial usuari</h1>
+          <p class="sr-only">En aquesta pagina es mostren diferents opcións</p>
         </div>
       </section>
     </main>
