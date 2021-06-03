@@ -70,7 +70,7 @@
                       <div class="mb-3">
                         <label for="nom" class="form-label">Nom</label>
                         <input type="text" class="form-control" id="nom" name="nom">
-                        <div id="errorNom" class="form-text text-danger"></div>
+                        <div id="errorNom" class="form-text text-danger"><?php if(isset($_GET["error"])){echo '*El nom del restaurant ja ha estat registrat';} ?></div>
                       </div>
 
                       <div class="mb-3">

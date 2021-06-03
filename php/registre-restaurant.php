@@ -4,6 +4,18 @@
 
     $usuari = checkUsuari();
 
+    $tel = $_POST["nom"];
+    $tel = str_replace(" ","%20%",$tel);
+    $params = "?Nombre=" . $tel;
+    $peticion = peticionGet('restaurantes',$params)->restaurantes;
+
+    $total = count($peticion);
+
+    if($total > 0){
+        header("Location: ../registre-restaurant.php?error=1");
+        return 1;
+    }
+
     $nom = $_POST["nom"];
     $desc = $_POST["desc"];
     $tipus = $_POST["tipus"];
