@@ -1,5 +1,6 @@
 <?php
     require_once("./functions.php");
+    require_once("./bucket.php");
 
     $usuari = checkUsuari();
 
@@ -10,6 +11,17 @@
     $municipi = $_POST["municipi"];
     $direccio = $_POST["direccio"];
     $domicili = intval($_POST["domicili"]);
+
+    $fotoName = $_FILES["foto"]["name"];
+    $fotoTmp = $_FILES["foto"]["tmp_name"];
+
+    $fotoName = str_replace(" ","",$fotoName);
+    $result = $s3Client->putObject([
+        'Bucket' => $bucket,
+        'Key' => 'fotosUsuarios/' . $fotoName,
+        'SourceFile' => $fotoTmp,
+    ]);
+    $s3_route = "https://s3ortizjairo.s3-eu-west-1.amazonaws.com/Restaurantes/" . $fotoName;
 
     // $fotoName = str_replace(" ","",$fotoName);
     // $result = $s3Client->putObject([
@@ -25,7 +37,7 @@
     $arrayParams["TipoDeComida"] = $tipus;
     $arrayParams["Descripcion"] = $desc;
     $arrayParams["Minimo"] = $minim;
-    $arrayParams["URLFoto"] = "https://www.antiguarestaurante.com/es/media/ee367c51f9/ee367c51f659c9963f83cba87c831516.cms.jpg";
+    $arrayParams["URLFoto"] = $s3_route;
     $arrayParams["IDPropietario"] = intval($usuari->id);
     $arrayParams["DocumentoValido"] = "Invent";
     $arrayParams["Aceptado"] = 0;
@@ -34,7 +46,7 @@
     $peticio = peticionPost("restaurantes",$arrayParams);
     $ok = json_encode($peticio);
 
-    echo 1;
+    header("Location: ../restaurants.propietari.php")
 
 
 

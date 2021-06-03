@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="./css/background.css">
     <link rel="stylesheet" href="./css/form.css">
     
-    <script src="./js/registre-restaurant.js"></script>
+    <script src="./js/registre-producte.js"></script>
     
     <title>EAT IT Registre</title>
   </head>
@@ -55,7 +55,7 @@
       <!-- Inici secció login -->
       <section id="login" class="login">
         <h1 class="sr-only">Registre</h1>
-        <p class="sr-only">Pagina de eat it para registrar un restaurante</p>
+        <p class="sr-only">Pagina de eat it para registrar un producte</p>
         <!-- Inici container -->
         <div class="container">
               
@@ -64,58 +64,35 @@
 
                 <!-- Inici sub-carta -->
                 <div class="sub-carta col-12 col-lg-6 py-5 mt-5">
-                    <h2>Registre Restaurant</h2>
+                    <h2>Registre Producte</h2>
                     <p class="sr-only">Registre</p>
-                    <form action="./php/registre-restaurant.php" enctype="multipart/form-data" method="post">
+                    <form action="" onsubmit="return false;">
                       <div class="mb-3">
                         <label for="nom" class="form-label">Nom</label>
-                        <input type="text" class="form-control" id="nom" name="nom">
+                        <input type="text" class="form-control" id="nom">
                         <div id="errorNom" class="form-text text-danger"></div>
+                      </div>
+                      
+                      <div class="mb-3">
+                        <label for="preu" class="form-label">Preu</label>
+                        <input type="number" class="form-control" id="preu">
+                        <div id="errorMinim" class="form-text text-danger"></div>
                       </div>
 
                       <div class="mb-3">
                         <label for="desc" class="form-label">Descripció</label>
-                        <textarea class="form-control" rows="3" id="desc" name="desc"></textarea>
+                        <textarea class="form-control" rows="3" id="desc"></textarea>
                         <div id="errorDesc" class="form-text text-danger"></div>
                       </div>
-                      
-                      <div class="mb-3">
-                        <label for="tipus" class="form-label">Tipus de menjar</label>
-                        <input type="text" class="form-control" id="tipus" name="tipus">
-                        <div id="errorTipus" class="form-text text-danger"></div>
-                      </div>
-
-                      <div class="mb-3">
-                        <label for="minim" class="form-label">Minim per comanda</label>
-                        <input type="number" class="form-control" id="minim" name="minim">
-                        <div id="errorMinim" class="form-text text-danger"></div>
-                      </div>
-                      
-                      <div id="output" class="mb-3"></div>
-                      <div id="output2" class="mb-3"></div>
-                      
-                      <div class="mb-3">
-                        <label for="direccio" class="form-label">Direcció</label>
-                        <input type="text" class="form-control" id="direccio" name="direccio">
-                        <div id="errorDireccio" class="form-text text-danger"></div>
-                      </div>
-                      
+<!--
                       <div class="mb-3">
                           <label for="foto" class="form-label">Imatge del restaurant</label>
-                          <input class="form-control" type="file" id="foto" name="foto">
+                          <input class="form-control" type="file" id="foto">
                       </div>
+-->
                       
-                      <div class="mb-3">
-                        <label for="domicili" class="form-label">Servei a domicili</label>
-                        <select class="form-select" id="domicili" name="domicili">
-                          <option value="1" selected>Si</option>
-                          <option value="0">No</option>
-                        </select>
-                        <div id="errorDomicili" class="form-text text-danger"></div>
-                      </div>
-                      
-                      <a href="./restaurants-propietari.php" class="btn btn-cancelar float-start">Cancelar</a>
-                      <button type="submit" class="btn btn-iniciar float-end">Enviar</button>
+                      <a href="./productes-propietari.php" class="btn btn-cancelar float-start">Cancelar</a>
+                      <button type="submit" class="btn btn-iniciar float-end" onclick="registre_producte()">Enviar</button>
                     </form>
                     
 

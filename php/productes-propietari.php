@@ -77,7 +77,8 @@
                             </table>';
              }
                 
-            $output = $output.'<!-- fi autogenerar--></div></div>
+            $output = $output.'<!-- fi autogenerar--></div>
+            <a class="btn btn-primary d-block mx-auto" href="./registre-producte.php">Crear Producte</a>
             <div class="producte">
                <h2>Descomptes</h2>
                <p class="sr-only">En aquest apartat es mostren els descomptes del restaurant</p>
@@ -106,9 +107,10 @@
                               }
                                 
                               $output = $output.'</tbody>
-                            </table>';
+                            </table></div>
+                            <a class="btn btn-primary d-block mx-auto" href="./registre-descompte.php">Crear Descompte</a>';
              }
-            $output = $output.'</div></div></div>';
+            $output = $output.'</div></div>';
             
             echo $output;
 ?>
