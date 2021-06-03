@@ -68,7 +68,7 @@
                                       <td>'.$value->Plato.'</td>
                                       <td>'.$value->Precio.'€</td>
                                       <td>'.$value->Descripcion.'</td>
-                                      <td><button class="btn btn-info mb-1" onclick="modificarProducte('.$value->ID.')">Modificar</button></td>
+                                      <td><form method="post" action="./php/modificar-producte.php"><input type="hidden" name="id" value="'.$value->ID.'"><button type="submit" class="btn btn-info">Modificar</button></form></td>
                                       <td><button class="btn btn-danger" onclick="eliminarProducte('.$value->ID.')">Eliminar</button></td>
                                     </tr>';
                               }

@@ -1,9 +1,15 @@
 <?php
-  require_once("./php/functions.php");  
-    $usuari = checkUsuari();
-    if(!isset($usuari)){
-        header('Location: ./index.php');
-    }
+  require_once("./php/functions.php");
+  $usuari = checkUsuari();
+  if(isset($usuari)){
+    if($usuari->TipoUsuario === 1){
+          header('Location: ./index.php');
+      }else if($usuari->TipoUsuario === 3){
+          header('Location: ./index.php');
+      }
+  }else{
+      header('Location: ./index.php');
+  }
 ?>
 <!doctype html>
 <html lang="es">
@@ -19,9 +25,8 @@
     <link rel="stylesheet" href="./css/background.css">
     <link rel="stylesheet" href="./css/form.css">
     
-    <script src="./js/perfil.js"></script>
     
-    <title>EAT IT Perfil</title>
+    <title>EAT IT Registre</title>
   </head>
 
   <body>
@@ -48,8 +53,8 @@
      
       <!-- Inici secció login -->
       <section id="login" class="login">
-        <h1 class="sr-only">Modificar Descompte</h1>
-        <p class="sr-only">Pagina de eat it perfil</p>
+        <h1 class="sr-only">Registre</h1>
+        <p class="sr-only">Pagina de eat it para modificar un producte</p>
         <!-- Inici container -->
         <div class="container">
               
@@ -58,28 +63,38 @@
 
                 <!-- Inici sub-carta -->
                 <div class="sub-carta col-12 col-lg-6 py-5 mt-5">
-                    <h2>Perfil</h2>
-                    <p class="sr-only">Perfil</p>
-                    <form action="./php/efectuar-modificacio-descompte.php" method="post">
+                    <h2>Registre Producte</h2>
+                    <p class="sr-only">Registre</p>
+                    <form action="./php/efectuar-modificacio-producte.php" method="post" enctype="multipart/form-data">
                      <?php
                         
                         $params = intval($_GET["trokolo"]);
-                        $descuentos = peticionGet('descuentos',$params)->descuentos;
+                        $productos = peticionGet('platos',$params)->platos;
                         
                         ?>
                       <div class="mb-3">
-                        <label for="codi" class="form-label">Codi</label>
-                        <input type="text" class="form-control" id="codi" name="codi" value="<?php echo $descuentos[0]->Codigo ?>">
-                        <div id="errorNom" class="form-text text-danger"><?php if(isset($_GET["error"])){echo '*El codi del descompte ja ha estat registrat en aquest restaurant';} ?></div>
+                        <label for="nom" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="nom" name="nom" value="<?php echo $productos[0]->Plato ?>" required>
+                        <div id="errorNom" class="form-text text-danger"><?php if(isset($_GET["error"])){echo '*El nom del producte ja ha estat registrat en aquest restaurant';} ?></div>
                       </div>
                       
                       <div class="mb-3">
-                        <label for="descompte" class="form-label">Descompte</label>
-                        <input type="number" class="form-control" id="descompte" name="descompte" step="0.01" value="<?php echo $descuentos[0]->TotalDescuento ?>">
+                        <label for="preu" class="form-label">Preu</label>
+                        <input type="number" class="form-control" id="preu" name="preu" value="<?php echo $productos[0]->Precio ?>" required>
                         <div id="errorMinim" class="form-text text-danger"></div>
                       </div>
+
+                      <div class="mb-3">
+                        <label for="desc" class="form-label">Descripció</label>
+                        <textarea class="form-control" rows="3" id="desc" name="desc" required><?php echo $productos[0]->Descripcion ?></textarea>
+                        <div id="errorDesc" class="form-text text-danger"></div>
+                      </div>
+                      <div class="mb-3">
+                          <label for="foto" class="form-label">Imatge del producte</label>
+                          <input class="form-control" type="file" id="foto" name="foto" required>
+                      </div>
                       
-                      <input type="hidden" name="id" value="<?php echo $descuentos[0]->ID ?>">
+                      <input type="hidden" name="id" value="<?php echo $productos[0]->ID ?>">
                       
                       <a href="./productes-propietari.php" class="btn btn-cancelar float-start">Cancelar</a>
                       <button type="submit" class="btn btn-iniciar float-end">Enviar</button>
