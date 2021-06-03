@@ -17,7 +17,7 @@
     if(count($pedidos) < 1){
                 $output = $output.'<p>No has fet camp comanda</p>';
     }else{
-            $output = $output.'<table class="table table-hover">
+            $output = $output.'<div class="table-responsive"><table class="table table-hover">
                               <thead>
                                 <tr>
                                   <th scope="col">Restaurant</th>
@@ -50,6 +50,6 @@
                                     </tr>';
         }
     }
-    $output = $output.'</div></div>';
+    $output = $output.'</div></div></div>';
     echo $output;
 ?>

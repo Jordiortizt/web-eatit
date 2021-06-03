@@ -1,5 +1,4 @@
-// comprovar BBDD
-var bbddNom = false;
+var bbddNom;
 
 window.onload = function () {
     cargarXML();
@@ -55,7 +54,7 @@ function registre_restaurant() {
     }else{
         document.getElementById("errorNom").innerHTML = "";
 
-        // comprovarNom();
+        comprovarNom();
     }
 
     // Descripció //
@@ -118,16 +117,16 @@ function registre_restaurant() {
         document.getElementById("minim").value != "" &&
         document.getElementById("municipi").value != "" &&
         document.getElementById("direccio").value != "" &&
-        document.getElementById("domicili").value != "" /* && 
-        bbddNom == true*/){
+        document.getElementById("domicili").value != "" && 
+        bbddNom == true){
         
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 if(this.responseText == "1") {
-                    window.location.href = "./index.php";
+                    window.location.href = "./restaurants-propietari.php";
                 }else{
-                    alert(this.responseText);
+                    alert(bbddNom);
                 }
                 
             }
@@ -142,7 +141,7 @@ function registre_restaurant() {
                 "&direccio=" + document.getElementById("direccio").value +
                 "&domicili=" + document.getElementById("domicili").value);
     }else{
-        alert(bbddNom);
+        console.log(bbddNom);
     }
 }
 
@@ -153,9 +152,11 @@ function comprovarNom() {
             if(this.responseText === "1") {
                 bbddNom = false;
                 document.getElementById("errorNom").innerHTML = "* El restaurant ja ha sigut registrat";
+                console.log(this.responseText);
             } else {
                 bbddNom = true;
                 document.getElementById("errorNom").innerHTML = "";
+                console.log(this.responseText);
             }
         }
     };

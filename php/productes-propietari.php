@@ -50,13 +50,14 @@
              if(count($productes) < 1){
                 $output = $output.'<p>No hi ha productes en aquest restaurant</p>';
              }else{
-                 $output = $output.'<table class="table table-hover">
+                 $output = $output.'<div class="table-responsive"><table class="table table-hover">
                               <thead>
                                 <tr>
                                   <th scope="col">Imatge</th>
                                   <th scope="col">Nom</th>
                                   <th scope="col">Preu</th>
                                   <th scope="col">Descripció</th>
+                                  <th></th>
                                   <th></th>
                                 </tr>
                               </thead>
@@ -67,7 +68,8 @@
                                       <td>'.$value->Plato.'</td>
                                       <td>'.$value->Precio.'€</td>
                                       <td>'.$value->Descripcion.'</td>
-                                      <td><button class="btn btn-info mb-1" onclick="modificarProducte('.$value->ID.')">Modificar</button><br><button class="btn btn-danger" onclick="eliminarProducte('.$value->ID.')">Eliminar</button></td>
+                                      <td><button class="btn btn-info mb-1" onclick="modificarProducte('.$value->ID.')">Modificar</button></td>
+                                      <td><button class="btn btn-danger" onclick="eliminarProducte('.$value->ID.')">Eliminar</button></td>
                                     </tr>';
                               }
                                 
@@ -75,7 +77,7 @@
                             </table>';
              }
                 
-            $output = $output.'<!-- fi autogenerar--></div>
+            $output = $output.'<!-- fi autogenerar--></div></div>
             <div class="producte">
                <h2>Descomptes</h2>
                <p class="sr-only">En aquest apartat es mostren els descomptes del restaurant</p>
@@ -84,7 +86,7 @@
             if(count($descomptes) < 1){
                 $output = $output.'<p>No hi ha descomptes en aquest restaurant</p>';
              }else{
-                 $output = $output.'<table class="table table-hover">
+                 $output = $output.'<div class="table-responsive"><table class="table table-hover">
                               <thead>
                                 <tr>
                                   <th scope="col">Codi de Descompte</th>
@@ -106,7 +108,7 @@
                               $output = $output.'</tbody>
                             </table>';
              }
-            $output = $output.'</div></div>';
+            $output = $output.'</div></div></div>';
             
             echo $output;
 ?>
