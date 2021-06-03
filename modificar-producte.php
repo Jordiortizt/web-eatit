@@ -89,13 +89,14 @@
                         <textarea class="form-control" rows="3" id="desc" name="desc" required><?php echo $productos[0]->Descripcion ?></textarea>
                         <div id="errorDesc" class="form-text text-danger"></div>
                       </div>
+<!--
                       <div class="mb-3">
                           <label for="foto" class="form-label">Imatge del producte</label>
                           <input class="form-control" type="file" id="foto" name="foto" required>
                       </div>
+-->
                       
                       <input type="hidden" name="id" value="<?php echo $productos[0]->ID ?>">
-                      <input type="hidden" name="img" value="<?php echo $productos[0]->URLFoto ?>">
                       
                       <a href="./productes-propietari.php" class="btn btn-cancelar float-start">Cancelar</a>
                       <button type="submit" class="btn btn-iniciar float-end">Enviar</button>
