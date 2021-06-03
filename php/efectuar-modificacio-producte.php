@@ -17,7 +17,6 @@
     $arrayParams["Plato"] = $_POST["nom"];
     $arrayParams["Precio"] = floatval($_POST["preu"]);
     $arrayParams["Descripcion"] = $_POST["desc"];
-//    $arrayParams["URLFoto"] = $s3_route;
 
     $peticio = peticionPut("platos/".intval($_POST["id"]),$arrayParams);
     
