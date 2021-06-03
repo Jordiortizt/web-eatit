@@ -100,7 +100,7 @@
                                     $output = $output.'<tr>
                                       <td>'.$value->Codigo.'</td>
                                       <td>'.$value->TotalDescuento.'€</td>
-                                      <td><button class="btn btn-info" onclick="modificarDescompte('.$value->ID.')">Modificar</button></td>
+                                      <td><form method="post" action="./php/modificar-descompte.php"><input type="hidden" name="id" value="'.$value->ID.'"><button type="submit" class="btn btn-info">Modificar</button></form></td>
                                       <td><button class="btn btn-danger" onclick="eliminarDescompte('.$value->ID.')">Eliminar</button></td>
                                     </tr>';
                               }

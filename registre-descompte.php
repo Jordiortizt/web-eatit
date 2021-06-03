@@ -25,8 +25,6 @@
     <link rel="stylesheet" href="./css/background.css">
     <link rel="stylesheet" href="./css/form.css">
     
-    <script src="./js/registre-descompte.js"></script>
-    
     <title>EAT IT Registre</title>
   </head>
 
@@ -66,16 +64,16 @@
                 <div class="sub-carta col-12 col-lg-6 py-5 mt-5">
                     <h2>Registre Descompte</h2>
                     <p class="sr-only">Registre</p>
-                    <form action="./php/registre-descompte.php" onsubmit="return false;" method="post">
+                    <form action="./php/registre-descompte.php" method="post">
                       <div class="mb-3">
                         <label for="codi" class="form-label">Codi</label>
                         <input type="text" class="form-control" id="codi" name="codi">
-                        <div id="errorNom" class="form-text text-danger"></div>
+                        <div id="errorNom" class="form-text text-danger"><?php if(isset($_GET["error"])){echo '*El codi del descompte ja ha estat registrat en aquest restaurant';} ?></div>
                       </div>
                       
                       <div class="mb-3">
                         <label for="descompte" class="form-label">Descompte</label>
-                        <input type="number" class="form-control" id="descompte" name="descompte">
+                        <input type="number" class="form-control" id="descompte" name="descompte" step="0.01">
                         <div id="errorMinim" class="form-text text-danger"></div>
                       </div>
                       

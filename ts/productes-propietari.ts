@@ -13,3 +13,35 @@ window.onload = function restaurantsPropietari() {
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.send("");
 }
+
+function eliminarProducte(id){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.response != 0) {
+                location.reload();
+            }else {
+                alert("No elimina");
+            }
+        }
+    };
+    xhttp.open("POST", "./php/eliminar-producte.php", true);
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhttp.send("id=" + id);
+}
+
+function eliminarDescompte(id){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.response != 0) {
+                location.reload();
+            }else {
+                alert("No elimina");
+            }
+        }
+    };
+    xhttp.open("POST", "./php/eliminar-descompte.php", true);
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhttp.send("id=" + id);
+}

@@ -34,7 +34,7 @@
     $peticio = peticionPost("descuentos",$arrayParams);
     $ok = json_encode($peticio);
 
-    header("Location: ../restaurants-propietari.php");
+    header("Location: ../productes-propietari.php");
 
 
 
