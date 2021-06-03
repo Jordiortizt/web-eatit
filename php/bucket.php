@@ -7,7 +7,7 @@ use Aws\S3\S3Client;
 
     //Create a S3Client
     $s3Client = new S3Client([
-        'region' => 'eu-west-1',
+        'region' => 'eu-west-3',
         'version' => '2006-03-01',
         'credentials' => [
             'key'    => "AKIAZ5LAIL3A74RKGK6B",
