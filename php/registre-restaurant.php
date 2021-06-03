@@ -22,7 +22,7 @@ try{
         'Key' => 'Restaurantes/' . $fotoName,
         'SourceFile' => $fotoTmp,
     ]);
-    $s3_route = "https://s3ortizjairo.s3-eu-west-1.amazonaws.com/Restaurantes/" . $fotoName;
+    $s3_route = "https://s3ortizjairo.s3-eu-west-3.amazonaws.com/Restaurantes/" . $fotoName;
 }catch(Exception $error){
     echo $fotoName;
     print_r($error);
