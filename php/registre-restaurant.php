@@ -51,7 +51,7 @@ try{
     $peticio = peticionPost("restaurantes",$arrayParams);
     $ok = json_encode($peticio);
 
-    echo 1;
+    header("Location: ../restaurants-propietari.php");
 
 
 
