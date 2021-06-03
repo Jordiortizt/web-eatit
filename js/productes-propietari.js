@@ -19,7 +19,7 @@ function eliminarProducte(id) {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             if (this.response != 0) {
-                location.reload();
+                window.location.href = './productes-propietari.php';
             }
             else {
                 alert("No elimina");
@@ -35,7 +35,7 @@ function eliminarDescompte(id) {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             if (this.response != 0) {
-                location.reload();
+                window.location.href = './productes-propietari.php';
             }
             else {
                 alert("No elimina");
