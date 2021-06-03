@@ -4,7 +4,7 @@
     $restaurant = checkRestaurant();
 
     $tel = $_POST["nom"];
-    $params = "?Nombre=" . $tel."?id".intval($restaurant->ID);
+    $params = "?Nombre=" . $tel."&id".intval($restaurant->ID);
     $peticion = peticionGet('platos',$params)->platos;
 
     $total = count($peticion);

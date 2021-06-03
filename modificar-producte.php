@@ -63,7 +63,7 @@
 
                 <!-- Inici sub-carta -->
                 <div class="sub-carta col-12 col-lg-6 py-5 mt-5">
-                    <h2>Registre Producte</h2>
+                    <h2>Modificar Producte</h2>
                     <p class="sr-only">Registre</p>
                     <form action="./php/efectuar-modificacio-producte.php" method="post" enctype="multipart/form-data">
                      <?php
