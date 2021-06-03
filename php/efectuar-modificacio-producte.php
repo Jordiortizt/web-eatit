@@ -16,10 +16,10 @@
         return 1;
     }
 
-//    $fotoName = $_FILES["foto"]["name"];
-//    $fotoTmp = $_FILES["foto"]["tmp_name"];
-//
-//    $fotoName = str_replace(" ","",$fotoName);
+    $fotoName = $_FILES["foto"]["name"];
+    $fotoTmp = $_FILES["foto"]["tmp_name"];
+
+    $fotoName = str_replace(" ","",$fotoName);
 
     $params = $_POST["id"];
     $peticion = peticionGet('platos',$params)->platos;
