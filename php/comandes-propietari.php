@@ -23,8 +23,10 @@
                                   <th scope="col">Restaurant</th>
                                   <th scope="col">Descompte</th>
                                   <th scope="col">Estat</th>
+                                  <th scope="col">Client</th>
                                   <th scope="col">Comentari</th>
                                   <th scope="col">Total</th>
+                                  <th><th>
                                   <th><th>
                                 </tr>
                               </thead>
@@ -48,6 +50,12 @@
                 }else{
                     $output = $output.'<span class="text-danger">Tancada</span>';
                 }
+                
+                $params = intval($valor->IDUsuario);
+                $useringo = peticionGet('usuarios',$params)->usuarios;
+                
+                $output = $output.'</td><td>'.$useringo[0]->Nombre.'</td>';
+                
                 $output = $output.'</td>
                                           <td>'.$valor->Comentario.'</td>
                                           <td>'.$valor->TotalPedido.'€</td>';
