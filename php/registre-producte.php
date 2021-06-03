@@ -19,7 +19,7 @@
 
     $nom = $_POST["nom"];
     $desc = $_POST["desc"];
-    $preu = intval($_POST["preu"]);
+    $preu = floatval($_POST["preu"]);
 
     $fotoName = $_FILES["foto"]["name"];
     $fotoTmp = $_FILES["foto"]["tmp_name"];
