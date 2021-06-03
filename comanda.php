@@ -120,7 +120,7 @@
                     <div class="mb-3">
                         <label for="descompte" class="form-label">Descompte</label>
                         <select id="descompte" class="form-select" onchange="modificarDescompte(<?php echo $total ?>)">
-                            <option value="0">Selecciona una opció</option>
+                            <option value="ako">Selecciona una opció</option>
                             <?php
                                 $restaurant = checkRestaurant();
                                 $params = "?Restaurante=".intval($restaurant->ID);

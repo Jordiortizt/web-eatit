@@ -19,9 +19,12 @@
     foreach($descomptes as $key => $value){
         if(strval($value->TotalDescuento) == strval($descompte)){
             $arrayParams["IDDescuento"] = intval($value->ID);
+            break;
+        }else{
+            $arrayParams["IDDescuento"] = 17;
         }
     }
-    
+
     $peticio = peticionPost("pedidos",$arrayParams);
 
     $params = "";
