@@ -16,13 +16,17 @@
     $fotoTmp = $_FILES["foto"]["tmp_name"];
 
     $fotoName = str_replace(" ","",$fotoName);
-echo $fotoName;
-   /* $result = $s3Client->putObject([
+try{
+    $result = $s3Client->putObject([
         'Bucket' => $bucket,
         'Key' => 'Restaurantes/' . $fotoName,
         'SourceFile' => $fotoTmp,
     ]);
-    $s3_route = "https://s3ortizjairo.s3-eu-west-1.amazonaws.com/Restaurantes/" . $fotoName;*/
+    $s3_route = "https://s3ortizjairo.s3-eu-west-1.amazonaws.com/Restaurantes/" . $fotoName;
+}catch(Exception $error){
+    echo $fotoName;
+    print_r($error);
+}
 
     // $fotoName = str_replace(" ","",$fotoName);
     // $result = $s3Client->putObject([
@@ -32,7 +36,7 @@ echo $fotoName;
     // ]);
     // $s3_route = "https://pfinaljp.s3-eu-west-1.amazonaws.com/fotosUsuarios/" . $fotoName;
 
-    /*$arrayParams["Nombre"] = $nom;
+    $arrayParams["Nombre"] = $nom;
     $arrayParams["Ciudad"] = $municipi;
     $arrayParams["Calle"] = $direccio;
     $arrayParams["TipoDeComida"] = $tipus;
@@ -47,7 +51,7 @@ echo $fotoName;
     $peticio = peticionPost("restaurantes",$arrayParams);
     $ok = json_encode($peticio);
 
-    header("Location: ../restaurants-propietari.php");*/
+    header("Location: ../restaurants-propietari.php");
 
 
 
