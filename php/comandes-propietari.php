@@ -17,12 +17,13 @@
     if(count($restaurantes) < 1){
                 $output = $output.'<p>No tens cap restaurant</p>';
     }else{
-            $output = $output.'<div class="col"><table class="table table-hover">
+            $output = $output.'<div class="table-responsive"><table class="table table-hover">
                               <thead>
                                 <tr>
                                   <th scope="col">Restaurant</th>
                                   <th scope="col">Descompte</th>
                                   <th scope="col">Estat</th>
+                                  <th scope="col">Comentari</th>
                                   <th scope="col">Total</th>
                                   <th><th>
                                 </tr>
@@ -48,6 +49,7 @@
                     $output = $output.'<span class="text-danger">Tancada</span>';
                 }
                 $output = $output.'</td>
+                                          <td>'.$valor->Comentario.'</td>
                                           <td>'.$valor->TotalPedido.'€</td>';
                 if(intval($valor->Estado) == 1){
                     $output = $output.'<td><button class="btn btn-success" onclick=cambiarEstat('.intval($valor->Estado).','.intval($valor->ID).')>Comanda Llesta</button></td>';
