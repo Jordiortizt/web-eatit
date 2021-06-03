@@ -19,10 +19,10 @@ function eliminarProducte(id) {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             if (this.response != 0) {
-                window.location.href = './productes-propietari.php';
+                location.reload();
             }
             else {
-                alert("No elimina");
+                location.reload();
             }
         }
     };
@@ -35,10 +35,10 @@ function eliminarDescompte(id) {
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             if (this.response != 0) {
-                window.location.href = './productes-propietari.php';
+                location.reload();
             }
             else {
-                alert("No elimina");
+                location.reload();
             }
         }
     };

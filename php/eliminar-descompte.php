@@ -9,8 +9,8 @@
     $peticion = peticionDelete('descuentos',$params)->descuentos;
 
     if(count($peticion) == 1){
-        echo 1;
+        header("Location: ../productes-propietari.php");
     }else{
-        echo 0;
+        header("Location: ../productes-propietari.php");
     }
 ?>
