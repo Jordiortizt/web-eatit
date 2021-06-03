@@ -18,7 +18,7 @@
     $fotoName = str_replace(" ","",$fotoName);
     $result = $s3Client->putObject([
         'Bucket' => $bucket,
-        'Key' => 'Restaurantes/' . $fotoName,
+        'Key' => 'fotosUsuarios/' . $fotoName,
         'SourceFile' => $fotoTmp,
     ]);
     $s3_route = "https://s3ortizjairo.s3-eu-west-1.amazonaws.com/Restaurantes/" . $fotoName;
