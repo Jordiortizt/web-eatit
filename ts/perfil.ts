@@ -391,7 +391,7 @@ function mostrarLocalidad() {
         if (this.readyState == 4 && this.status == 200) {
             var xmlDoc = xhttp.responseXML;
             var municipio = xmlDoc.getElementsByTagName("municipio");
-            var code = '<div class"mb-3"><label for="municipi" class="form-label">Municipi</label><select class="form-select" id="municipi">';
+            var code = '<div class"mb-3"><label for="municipi" class="form-label">Municipi</label><select class="form-select" id="municipi" name="municipi">';
             for (var i = 0; i < municipio.length; i++) {
                 code += '<option value="' + municipio[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + '">' + municipio[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + '</option>';
             }

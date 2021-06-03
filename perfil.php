@@ -60,40 +60,40 @@
                 <div class="sub-carta col-12 col-lg-6 py-5 mt-5">
                     <h2>Perfil</h2>
                     <p class="sr-only">Perfil</p>
-                    <form action="" onsubmit="return false;">
+                    <form action="./php/modificar-user.php" method="post">
                       <div class="mb-3">
                         <label for="nom" class="form-label">Nom</label>
-                        <input type="text" class="form-control" id="nom" value="<?php echo $usuari->Nombre ?>">
+                        <input type="text" class="form-control" id="nom" value="<?php echo $usuari->Nombre ?>" name="nom">
                         <div id="errorNom" class="form-text text-danger"></div>
                       </div>
 
                       <div class="mb-3">
                         <label for="cognom" class="form-label">Cognoms</label>
-                        <input type="text" class="form-control" id="cognom" value="<?php echo $usuari->Apellidos ?>">
+                        <input type="text" class="form-control" id="cognom" value="<?php echo $usuari->Apellidos ?>" name="cognom">
                         <div id="errorCognom" class="form-text text-danger"></div>
                       </div>
                       
                       <div class="mb-3">
                         <label for="tel" class="form-label">Telefon</label>
-                        <input type="number" class="form-control" id="tel" value="<?php echo $usuari->Telefono ?>">
+                        <input type="number" class="form-control" id="tel" value="<?php echo $usuari->Telefono ?>" name="tel" disabled>
                         <div id="errorTel" class="form-text text-danger"></div>
                       </div>
 
                       <div class="mb-3">
                         <label for="dni" class="form-label">DNI</label>
-                        <input type="text" class="form-control" id="dni" value="<?php echo $usuari->DNICIF ?>">
+                        <input type="text" class="form-control" id="dni" value="<?php echo $usuari->DNICIF ?>" name="dni">
                         <div id="errorDni" class="form-text text-danger"></div>
                       </div>
 
                       <div class="mb-3">
                         <label for="usuari" class="form-label">Nom d'usuari</label>
-                        <input type="text" class="form-control" id="usuari" value="<?php echo $usuari->Usuario ?>">
+                        <input type="text" class="form-control" id="usuari" value="<?php echo $usuari->Usuario ?>" name="usuari" disabled>
                         <div id="errorUsuari" class="form-text text-danger"></div>
                       </div>
 
                       <div class="mb-3">
                         <label for="email" class="form-label">Correu Electronic</label>
-                        <input type="email" class="form-control" id="email" value="<?php echo $usuari->Email ?>">
+                        <input type="email" class="form-control" id="email" value="<?php echo $usuari->Email ?>" name="email" disabled>
                         <div id="errorEmail" class="form-text text-danger"></div>
                       </div>
                       
@@ -102,7 +102,7 @@
                       
                       <div class="mb-3">
                         <label for="direccio" class="form-label">Direcció</label>
-                        <input type="text" class="form-control" id="direccio" value="<?php echo $usuari->Direccion ?>" placeholder="No hi ha direcció registrada">
+                        <input type="text" class="form-control" id="direccio" value="<?php echo $usuari->Direccion ?>" placeholder="No hi ha direcció registrada" name="direccio">
                         <div id="errorDireccio" class="form-text text-danger"></div>
                       </div>
                       
@@ -112,7 +112,7 @@
                           </div>
                       </div>
                       <a href="./index-admin.php" class="btn btn-cancelar float-start">Cancelar</a>
-                      <button type="submit" class="btn btn-iniciar float-end" onclick="change()">Enviar</button>
+                      <button type="submit" class="btn btn-iniciar float-end">Enviar</button>
                     </form>
                     
 

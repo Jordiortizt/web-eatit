@@ -5,12 +5,9 @@
 
     $nom = $_POST["nom"];
     $cognom = $_POST["cognom"];
-    $tel = intval($_POST["tel"]);
-    $email = $_POST["email"];
     $dni = $_POST["dni"];
-    $usuari = $_POST["usuari"];
     $direccio = $_POST["direccio"];
-    $ciutat = $_POST["ciutat"];
+    $ciutat = $_POST["municipi"];
 
     // $fotoName = str_replace(" ","",$fotoName);
     // $result = $s3Client->putObject([
@@ -20,22 +17,24 @@
     // ]);
     // $s3_route = "https://pfinaljp.s3-eu-west-1.amazonaws.com/fotosUsuarios/" . $fotoName;
 
-//    $arrayParams["ID"] = intval($user->id); 
+    $arrayParams["ID"] = intval($user->id); 
     $arrayParams["Nombre"] = $nom;
     $arrayParams["Apellidos"] = $cognom;
-    $arrayParams["Usuario"] = $usuari;
+    $arrayParams["Usuario"] = $user->Usuario;
     $arrayParams["Password"] = $user->Password;
-    $arrayParams["Email"] = $email;
-    $arrayParams["Telefono"] = $tel;
+    $arrayParams["Email"] = $user->Email;
+    $arrayParams["Telefono"] = $user->Telefono;
     $arrayParams["TipoUsuario"] = intval($user->TipoUsuario);
     $arrayParams["DNICIF"] = $dni;
+    $arrayParams["Direccion"] = $direccio;
+    $arrayParams["Ciudad"] = $ciutat;
 
-    $peticio = peticionPut("usuarios",$arrayParams);
+    $peticio = peticionPut("usuarios/".$user->id,$arrayParams);
     $ok = json_encode($peticio);
 
-    $_SESSION["userEatit"] = (object)$arrayParams;
+    session_destroy();
 
-    print_r($arrayParams);
+    header("Location: ../login.php");
 
 
 
