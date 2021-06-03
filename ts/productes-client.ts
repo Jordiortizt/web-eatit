@@ -30,7 +30,7 @@ function afegirProducte(id){
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     
-                    alert(this.responseText);
+                    // alert(this.responseText);
                 }
             };
         xhttp.open("POST", "./php/afegirCarro.php", true);
@@ -51,7 +51,7 @@ function restarProducte(id){
             xhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     
-                    alert(this.responseText);
+                    // alert(this.responseText);
                 }
             };
         xhttp.open("POST", "./php/restarCarro.php", true);

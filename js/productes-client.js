@@ -27,7 +27,7 @@ function afegirProducte(id) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                alert(this.responseText);
+                // alert(this.responseText);
             }
         };
         xhttp.open("POST", "./php/afegirCarro.php", true);
@@ -45,7 +45,7 @@ function restarProducte(id) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                alert(this.responseText);
+                // alert(this.responseText);
             }
         };
         xhttp.open("POST", "./php/restarCarro.php", true);
