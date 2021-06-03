@@ -12,7 +12,7 @@
   }
 ?>
 <!doctype html>
-<html lang="es">
+<html lang="ca">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="./css/background.css">
     <link rel="stylesheet" href="./css/nav-restaurants.css">
     <link rel="stylesheet" href="./css/productes.css">
+    <link rel="icon" href="./img/LogoEatit.png" type="image/png">
     
     <script src="./js/productes-propietari.js"></script>
     

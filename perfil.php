@@ -6,7 +6,7 @@
     }
 ?>
 <!doctype html>
-<html lang="es">
+<html lang="ca">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="./css/background.css">
     <link rel="stylesheet" href="./css/form.css">
+    <link rel="icon" href="./img/LogoEatit.png" type="image/png">
     
     <script src="./js/perfil.js"></script>
     

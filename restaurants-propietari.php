@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="./css/background.css">
     <link rel="stylesheet" href="./css/nav-restaurants.css">
     <link rel="stylesheet" href="./css/restaurants.css">
+    <link rel="icon" href="./img/LogoEatit.png" type="image/png">
     
     <script src="./js/restaurants-propietari.js"></script>
     
