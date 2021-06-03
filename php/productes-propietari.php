@@ -48,7 +48,7 @@
                
                
              if(count($productes) < 1){
-                $output = $output.'<p>No hi ha productes en aquest restaurant</p>';
+                $output = $output.'<p>No hi ha productes en aquest restaurant</p><a class="btn btn-primary d-block mx-auto" href="./registre-producte.php">Crear Producte</a>';
              }else{
                  $output = $output.'<div class="table-responsive"><table class="table table-hover">
                               <thead>
@@ -74,18 +74,17 @@
                               }
                                 
                               $output = $output.'</tbody>
-                            </table>';
+                            </table></div><a class="btn btn-primary d-block mx-auto" href="./registre-producte.php">Crear Producte</a>';
              }
                 
-            $output = $output.'<!-- fi autogenerar--></div>
-            <a class="btn btn-primary d-block mx-auto" href="./registre-producte.php">Crear Producte</a>
+            $output = $output.'<!-- fi autogenerar-->
             <div class="producte">
                <h2>Descomptes</h2>
                <p class="sr-only">En aquest apartat es mostren els descomptes del restaurant</p>
                <!-- inici autogenerar-->';
 
             if(count($descomptes) < 1){
-                $output = $output.'<p>No hi ha descomptes en aquest restaurant</p>';
+                $output = $output.'<p>No hi ha descomptes en aquest restaurant</p><a class="btn btn-primary d-block mx-auto" href="./registre-descompte.php">Crear Descompte</a>';
              }else{
                  $output = $output.'<div class="table-responsive"><table class="table table-hover">
                               <thead>

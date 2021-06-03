@@ -66,21 +66,21 @@
                 <div class="sub-carta col-12 col-lg-6 py-5 mt-5">
                     <h2>Registre Descompte</h2>
                     <p class="sr-only">Registre</p>
-                    <form action="" onsubmit="return false;">
+                    <form action="./php/registre-descompte.php" onsubmit="return false;" method="post">
                       <div class="mb-3">
                         <label for="codi" class="form-label">Codi</label>
-                        <input type="text" class="form-control" id="codi">
+                        <input type="text" class="form-control" id="codi" name="codi">
                         <div id="errorNom" class="form-text text-danger"></div>
                       </div>
                       
                       <div class="mb-3">
                         <label for="descompte" class="form-label">Descompte</label>
-                        <input type="number" class="form-control" id="descompte">
+                        <input type="number" class="form-control" id="descompte" name="descompte">
                         <div id="errorMinim" class="form-text text-danger"></div>
                       </div>
                       
                       <a href="./productes-propietari.php" class="btn btn-cancelar float-start">Cancelar</a>
-                      <button type="submit" class="btn btn-iniciar float-end" onclick="registre_descompte()">Enviar</button>
+                      <button type="submit" class="btn btn-iniciar float-end">Enviar</button>
                     </form>
                     
 
