@@ -12,7 +12,7 @@
   }
 ?>
 <!doctype html>
-<html lang="es">
+<html lang="ca">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -49,11 +49,11 @@
           <span class="hamburger hamburger-3"></span>
         </label>
 
-        <a href="./registre-restaurant.php" class="menu-item"> <i class="fas fa-plus"></i> </a>
+        <a href="./registre-restaurant.php" class="menu-item"> <i class="fas fa-plus"></i><span class="sr-only">inici</span> </a>
         <p class="sr-only">Espai</p>
         <p class="sr-only">Espai</p>
         <p class="sr-only">Espai</p>
-        <a href="./index.php" class="menu-item"> <i class="fas fa-angle-left"></i> </a>
+        <a href="./index.php" class="menu-item"> <i class="fas fa-angle-left"></i><span class="sr-only">Enrere</span> </a>
 
       </nav>
       <!-- </div> -->
