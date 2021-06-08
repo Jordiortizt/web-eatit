@@ -122,11 +122,11 @@ function registre() {
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 if (this.responseText == "1") {
-                    alert(this.responseText);
+                    // alert(this.responseText);
                     window.location.href = "./login.php";
                 }
                 else {
-                    alert(this.responseText);
+                    // alert(this.responseText);
                 }
             }
         };
@@ -142,10 +142,10 @@ function registre() {
             "&tipus=" + document.getElementById("tipus").value);
     }
     else {
-        alert("bbddEmail " + bbddEmail);
-        alert("bbddTel " + bbddTel);
-        alert("bbddDni " + bbddDni);
-        alert("bbddUsuari " + bbddUsuari);
+        // alert("bbddEmail "+bbddEmail);
+        // alert("bbddTel "+bbddTel);
+        // alert("bbddDni "+bbddDni);
+        // alert("bbddUsuari "+bbddUsuari);
     }
 }
 //
